@@ -6,3 +6,8 @@
 @import "./styles/themes/themes.css";
 @plugin "flowbite/plugin";
 @custom-variant dark (&:where(.dark, .dark *));
+
+body {
+    font-family: 'Times New Roman', Times, serif;
+
+}

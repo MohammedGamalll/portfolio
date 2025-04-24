@@ -1,31 +1,33 @@
 
 
 <nav
-    class="bg-white capitalize dark:bg-bg-mid-dark fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600 px-0 md:px-25">
+    class="capitalize fixed w-full z-20 top-0 start-0 border-b bg-white/0 dark:bg-bg-mid-dark/0 background-blur-lg backdrop-blur-md border-gray-200 dark:border-gray-600 px-0 md:px-25 ">
     <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-4">
+        class="max-w-screen-xl flex flex-wrap items-center justify-between md:mx-auto mx-0 py-4">
         <a routerLink="/"
             class="flex items-center space-x-3 rtl:space-x-reverse">
             <span
-                class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-black">Portfolio</span>
+                class="self-center md:text-2xl text-md font-semibold whitespace-nowrap dark:text-white text-black">Mohammed</span>
         </a>
-        <div class="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+        <div class="flex md:order-2 space-x-2 md:space-x-0 rtl:space-x-reverse">
 
             <button (click)="toggleTheme()"
-                class="mx-4 my-2 text-xl  rounded cursor-pointer">
+                class="mx-4 my-2 text-xl rounded cursor-pointer">
                 @if (isDarkModeEnabled()) {
-                <i
-                    class="fas fa-moon text-main hover:text-hover transition-colors"></i>
-                }
-                @else {
-                <i
-                    class="fas fa-sun text-main hover:text-hover  transition-colors"></i>
 
+                <i
+                    class="fas fa-moon text-white hover:text-hover transition-colors"></i>
+                } @else {
+                <i
+                    class="fas fa-sun text-black hover:text-hover transition-colors"></i>
                 }
+
             </button>
-            <a routerLink="/contact"
-                class="text-white bg-gray-500 hover:bg-bg-dark transition-colors focus:outline-none font-medium rounded-lg text-sm text-center my-auto px-4 py-2 ">Contact
-                Me</a>
+            <a
+                href="https://drive.google.com/file/d/1NUcKsotYA_c1nadB2rjYBI4B3tyTpYoP/view?usp=sharing"
+                target="_blank" rel="noopener noreferrer"
+                class="text-white bg-gray hover:bg-bg-dark dark:hover:bg-white  dark:hover:text-black  dark:text-white transition-colors focus:outline-none font-medium rounded-lg text-sm text-center my-auto px-4 py-2 dark:bg-bg-dark">CV
+                <i class="ps-2 fas fa-file"></i></a>
 
             <button data-collapse-toggle="navbar-sticky" type="button"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
@@ -44,36 +46,36 @@
             class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
             id="navbar-sticky">
             <ul
-                class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg bg-bg-light md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-bg-mid-dark md:dark:bg-bg-mid-dark dark:border-gray-700">
+                class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0   dark:border-gray">
                 <li>
                     <a routerLink="/home"
-                        routerLinkActive="text-lg transition-all !font-bold"
-                        class="block py-2 px-3 text-gray-900 dark:text-white bg-bg-light rounded-sm md:bg-transparent font-medium  hover:font-bold transition-all"
+                        routerLinkActive="!bg-gray transition-all"
+                        class="block py-1 px-3 text-black dark:text-white rounded-xl md:bg-transparent font-medium  hover:bg-gray transition-colors "
                         aria-current="page">Home</a>
                 </li>
 
                 <li>
                     <a routerLink="/education"
-                        routerLinkActive="text-lg transition-all !font-bold"
-                        class="block py-2 px-3 text-gray-900 dark:text-white bg-bg-light rounded-sm md:bg-transparent font-medium  hover:font-bold transition-all"
+                        routerLinkActive="!bg-gray transition-all"
+                        class="block py-1 px-3 text-gray-900 dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium  hover:bg-gray transition-colors "
                         aria-current="page">education</a>
                 </li>
                 <li>
                     <a routerLink="/projects"
-                        routerLinkActive="text-lg transition-all !font-bold"
-                        class="block py-2 px-3 text-gray-900 dark:text-white bg-bg-light rounded-sm md:bg-transparent font-medium  hover:font-bold transition-all"
+                        routerLinkActive="!bg-gray transition-all"
+                        class="block py-1 px-3 text-gray-900 dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium  hover:bg-gray transition-colors "
                         aria-current="page">projects</a>
                 </li>
                 <li>
                     <a routerLink="/skills"
-                        routerLinkActive="text-lg transition-all !font-bold"
-                        class="block py-2 px-3 text-gray-900 dark:text-white bg-bg-light rounded-sm md:bg-transparent font-medium  hover:font-bold transition-all"
+                        routerLinkActive="!bg-gray transition-all"
+                        class="block py-1 px-3 text-gray-900 dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium  hover:bg-gray transition-colors "
                         aria-current="page">skills</a>
                 </li>
                 <li>
                     <a routerLink="/contact"
-                        routerLinkActive="text-lg transition-all !font-bold"
-                        class="block py-2 px-3 text-gray-900 dark:text-white bg-bg-light rounded-sm md:bg-transparent font-medium  hover:font-bold transition-all"
+                        routerLinkActive="!bg-gray transition-all"
+                        class="block py-1 px-3 text-gray-900 dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium  hover:bg-gray transition-colors "
                         aria-current="page">contact</a>
                 </li>
 

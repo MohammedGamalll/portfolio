@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
+import TWriter from 't-writer.js';
 
 @Component({
   selector: 'app-home',
@@ -7,4 +8,30 @@ import { RouterLink } from '@angular/router';
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
-export class HomeComponent {}
+export class HomeComponent implements AfterViewInit {
+  ngAfterViewInit() {
+    const target = document.querySelector('.tw');
+    const writer = new TWriter(target, {
+      loop: true,
+      typeSpeed: 80,
+      deleteSpeed: 80,
+      typeColor: '#808080',
+    });
+    writer
+      .type('Software Engineer')
+      .rest(1000)
+      .changeOps({ deleteSpeed: 20 })
+      .remove(17)
+      .type('Frontend Developer (Angular)')
+      .rest(1000)
+      .remove(30)
+      .type('Backend Developer (ASP.NET Core)')
+      .rest(1000)
+      .changeOps({ deleteSpeed: 20 })
+      .remove(32)
+      .type('Full Stack Developer')
+      .rest(1000)
+      .clear()
+      .start();
+  }
+}
