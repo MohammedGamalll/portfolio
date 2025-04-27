@@ -1,1 +1,237 @@
-<p>contact works!</p>
+
+<section class="text-gray dark:bg-bg-mid-dark body-font relative">
+    <div class="container px-25 py-24 mx-auto">
+        <div class="flex flex-col text-center w-full mb-12">
+            <h2
+                class="sm:text-3xl text-2xl font-medium title-font mt-4 text-black dark:text-white">Get
+                in Touch</h2>
+
+        </div>
+        <div class="md:flex justify-between items-center flex-wrap text-center">
+            <div
+                class="md:w-1/2 w-full flex flex-col items-center gap-5">
+                <div
+                    class="flex flex-col items-center justify-center p-5 w-1/2 bg-gray rounded-2xl gap-1 hover:bg-gray-700 transition-all duration-300 ease-in-out">
+
+                    <span class="text-sm  dark:text-white">Email <i
+                            class="fas fa-envelope fa-beat ms-1"></i></span>
+                    <span class="text-sm  dark:text-white"><a
+                            href="mailto:mohammedgamall151@gmail.com"
+                            class=" dark:text-white">
+                            mohammedgamall151&#64;gmail.com</a></span>
+
+                    <span class="text-sm  dark:text-white ">
+                        <a href="mailto:mohammedgamall151@gmail.com"
+                            class=" dark:text-white">Write
+                            Me <i class="fas fa-pen-to-square"></i></a>
+                    </span>
+
+                </div>
+
+                <div
+                    class="flex flex-col items-center justify-center p-5 w-1/2 bg-gray-700 rounded-2xl gap-1 hover:bg-gray transition-all duration-300 ease-in-out">
+
+                    <span class="text-sm  dark:text-white">Whatsapp <i
+                            class="fa-brands fa-whatsapp fa-shake ms-1"></i></span>
+                    <span class="text-sm  dark:text-white"><a
+                            href="tel:+201127447947"
+                            class=" dark:text-white">
+                            01127447947</a>
+                    </span>
+
+                    <span class="text-sm  dark:text-white">
+                        <a
+                            href="https://api.whatsapp.com/send/?phone=201127447947&amp;text&amp;type=phone_number&amp;app_absent=0"
+                            target="_blank"
+                            class=" dark:text-white ">Message
+                            Me <i class="fas fa-pen-to-square"></i></a>
+                    </span>
+                </div>
+                <div
+                    class="flex flex-col items-center justify-center p-5 w-1/2 bg-gray rounded-2xl gap-1 hover:bg-gray-700 transition-all duration-300 ease-in-out">
+
+                    <span class="text-sm  dark:text-white">LinkedIn <i
+                            class="fa-brands fa-linkedin fa-bounce ms-1"></i></span>
+                    <span class="text-sm  dark:text-white">Mohammed
+                        Gamal</span>
+
+                    <span class="text-sm  dark:text-white">
+                        <a
+                            href="https://www.linkedin.com/in/mohammed-gamal-aa76b7248/"
+                            target="_blank"
+                            class=" dark:text-white ">Message
+                            Me <i class="fas fa-pen-to-square"></i></a>
+                    </span>
+                </div>
+
+            </div>
+            <form class="md:w-1/2 w-full" [formGroup]="myForm"
+                (ngSubmit)="onSubmit()">
+                <div class="flex flex-wrap">
+                    <h2
+                        class="leading-relaxed mx-auto text-base mb-2">Please
+                        fill
+                        out the form below to get in touch with me. <i
+                            class="fas fa-paper-plane"></i></h2>
+                    <!-- Name -->
+                    @let name = myForm.get('name');
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <input type="text" id="name" formControlName="name"
+                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-black bg-transparent rounded-lg border-1 border-gray appearance-none dark:text-white  dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-500 peer"
+                                placeholder=" " />
+                            <label for="name"
+                                class="absolute text-sm text-gray dark:text-white duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-bg-mid-dark px-2 peer-focus:px-2 peer-focus:text-gray peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Name</label>
+                        </div>
+                    </div>
+
+                    @if (name?.errors &&
+                    name?.touched) {
+                    <div
+                        class="flex p-4 w-1/2 my-4 text-sm text-red-500 rounded-lg bg-main-000 "
+                        role="alert">
+                        <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        </svg>
+                        <span class="sr-only">Danger</span>
+                        <div>
+                            <span class="font-medium">Ensure that these
+                                requirements
+                                are
+                                met:</span>
+                            <ul class="mt-1.5 list-disc list-inside capitalize">
+                                @if (name?.getError('required')) {
+                                <li>This Field is Required</li>
+                                }
+                                @else if (name?.getError('minlength')) {
+                                <li>The min Lenght is 3 character</li>
+                                }
+                                @else if (name?.getError('maxlength')) {
+                                <li>The max length is 20 character</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    }
+
+                    <!-- Email -->
+                    @let email = myForm.get('email');
+
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <input type="text" id="email"
+                                formControlName="email"
+                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-black bg-transparent rounded-lg border-1 border-gray appearance-none dark:text-white  dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-500 peer"
+                                placeholder=" " />
+                            <label for="email"
+                                class="absolute text-sm text-gray dark:text-white duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-bg-mid-dark px-2 peer-focus:px-2 peer-focus:text-gray peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Email</label>
+                        </div>
+                    </div>
+                    @if (email?.errors &&
+                    email?.touched) {
+                    <div
+                        class="flex p-4 my-4 text-sm text-red-500 rounded-lg bg-main-000 "
+                        role="alert">
+                        <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        </svg>
+                        <span class="sr-only">Danger</span>
+                        <div>
+                            <span class="font-medium">Ensure that these
+                                requirements
+                                are
+                                met:</span>
+                            <ul class="mt-1.5 list-disc list-inside capitalize">
+                                @if (email?.getError('required')) {
+                                <li>This Field is Required</li>
+                                }
+                                @else if (email?.getError('email')) {
+                                <li>Please enter a valid email address. :)</li>
+                                }
+
+                            </ul>
+                        </div>
+                    </div>
+                    }
+                    <!-- Message -->
+                    <div class="p-2 w-full">
+                        <div class="relative">
+                            <textarea type="text" formControlName="message"
+                                class="block px-2.5 pb-2.5 pt-4 w-full text-sm text-black bg-transparent rounded-lg border-1 border-gray appearance-none dark:text-white  dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-500 peer"
+                                placeholder=" "></textarea>
+                            <label for="textarea"
+                                class="absolute text-sm text-gray dark:text-white duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] bg-white dark:bg-bg-mid-dark px-2 peer-focus:px-2 peer-focus:text-gray peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto start-1">Message</label>
+                        </div>
+                    </div>
+                    @let message = myForm.get('message');
+                    @if (message?.errors &&
+                    message?.touched) {
+
+                    <div
+                        class="flex p-4 my-4 text-sm text-red-500 rounded-lg bg-main-000 "
+                        role="alert">
+                        <svg class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="currentColor" viewBox="0 0 20 20">
+                            <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                        </svg>
+                        <span class="sr-only">Danger</span>
+                        <div>
+                            <span class="font-medium">Ensure that these
+                                requirements
+                                are
+                                met:</span>
+                            <ul class="mt-1.5 list-disc list-inside capitalize">
+                                @if (message?.getError('required')) {
+                                <li>This Field is Required</li>
+                                }
+                                @else if (message?.getError('minlength')) {
+                                <li>The min Lenght is {{
+                                    message?.getError('minlength').requiredLength
+                                    }}
+                                    character</li>
+                                }
+                                @else if (message?.getError('maxlength')) {
+                                <li>The max length is {{
+                                    message?.getError('maxlength').requiredLength
+                                    }}
+                                    character</li>
+                                }
+                            </ul>
+                        </div>
+                    </div>
+                    }
+
+                    <button
+                        [disabled]="myForm.invalid || myForm.pristine"
+                        class="
+
+                text-white bg-gray hover:bg-bg-dark dark:hover:bg-white  dark:hover:text-black  
+                dark:text-white transition-colors focus:outline-none font-medium 
+                rounded-lg text-sm text-center my-auto px-4 py-2 dark:bg-bg-dark
+                w-1/2 mx-auto mt-4
+                cursor-pointer
+                    disabled
+                    ">
+                        Submit
+                        @if (isloading) {
+                        <i class="fas fa-spinner fa-spin ms-1"></i>
+                        }
+                    </button>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+</section>

@@ -4,13 +4,10 @@
   <section class="text-gray-600 body-font">
     <div class="container py-24 mx-auto">
       <h2
-        class="text-2xl font-bold mb-10 text-center text-black dark:text-white head">My
-        Skills
-      </h2>
+                class="sm:text-3xl text-2xl font-medium title-font my-4 text-black dark:text-white text-center">My Skills</h2>
 
-      <!-- Responsive grid -->
       <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 px-4 md:px-0">
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 px-4 md:px-0 pt-10">
         @for (skill of skills; track $index) { <div
           class="flex flex-col items-center hover:scale-110 transition-transform duration-300 ease-in-out shadow-lg py-4 px-4 rounded-lg bg-white dark:bg-bg-dark text-black dark:text-white">
           <img

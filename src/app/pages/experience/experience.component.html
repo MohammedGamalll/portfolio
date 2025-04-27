@@ -1,0 +1,47 @@
+
+<section
+    class="text-gray-600 body-font overflow-hidden px-0 md:px-25 dark:bg-bg-mid-dark dark:text-white 100vh">
+    <div class="container  py-24 mx-auto">
+        <h2
+            class="sm:text-3xl text-2xl font-medium title-font my-4 text-black dark:text-white text-center">My
+            Experience</h2>
+        <div class="relative mx-auto max-w-4xl pt-10 text-white">
+            <div
+                class="absolute h-full left-1/2 line"></div>
+            @for (exp of experiences; track exp.number) {
+            <div
+                [class]="exp.number%2!=0 ? 'flex justify-end' : 'flex justify-start' "
+                class="relative mb-10">
+                <div
+                    class="z-10 absolute top-1/2 -translate-y-1/2  w-5 h-5 !rounded-full bg-bg-mid-dark dark:bg-bg-light shadow-md left-1/2 -translate-x-1/2 transition-all duration-300 hover:scale-110">
+                </div>
+
+                <div
+                    [class]="exp.number % 2 == 0 ? 'ml-auto w-1/2' : 'mr-auto w-1/2'"
+                    class="relative px-4">
+                    <div
+                        class="relative p-6 bg-bg-mid-dark dark:bg-bg-light dark:text-black text-white rounded-lg shadow-lg transition-all duration-300 hover:bg-gray hover:scale-105">
+                        <h3 class="text-xl font-semibold">{{ exp.title }}</h3>
+                        <p class="mt-2 text-sm">{{ exp.institution }}</p>
+                        <span class="block mt-2 text-xs">{{ exp.date }}</span>
+                    </div>
+                </div>
+            </div>
+            }
+        </div>
+        <div class="mt-10 pt-10">
+            <owl-carousel-o [options]="customOptions">
+                @for (cat of certificates; track $index) {
+                <ng-template carouselSlide>
+                    <div
+                        class=" h-full overflow-hidden my-6">
+                        <img
+                            class="h-[300px] w-full object-contain  object-center"
+                            [src]="cat.src" alt="blog">
+
+                    </div> </ng-template>}
+            </owl-carousel-o>
+        </div>
+
+    </div>
+</section>

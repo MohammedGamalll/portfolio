@@ -34,10 +34,10 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'education',
+        path: 'experience',
         loadComponent: () =>
-          import('./pages/education/education.component').then(
-            (m) => m.EducationComponent
+          import('./pages/experience/experience.component').then(
+            (m) => m.ExperienceComponent
           ),
       },
     ],
