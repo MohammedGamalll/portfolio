@@ -1,35 +1,37 @@
 
 
 <nav
-    class="capitalize fixed w-full z-20 top-0 start-0 border-b bg-white/0 dark:bg-bg-mid-dark/0 background-blur-lg backdrop-blur-md border-gray-200 dark:border-gray-600 px-5 md:px-25 ">
+    class="capitalize fixed w-full z-20 top-0 start-0 border-b bg-white/0 dark:bg-bg-mid-dark/0 background-blur-lg backdrop-blur-md border-gray-200 dark:border-gray-600 px-5 md:px-25">
     <div
         class="max-w-screen-xl flex flex-wrap items-center justify-between md:mx-auto mx-0 py-4">
         <a routerLink="/"
             class="flex items-center space-x-3 rtl:space-x-reverse">
             <span
-                class="self-center md:text-2xl text-xl typography  text-md font-light whitespace-nowrap dark:text-white text-black">Mohammed</span>
+                class="self-center md:text-2xl text-xl typography text-md font-light whitespace-nowrap dark:text-white text-black">Mohammed</span>
         </a>
         <div class="flex md:order-2 space-x-2 md:space-x-0 rtl:space-x-reverse">
 
+            <!-- Theme Toggle Button -->
             <button (click)="toggleTheme()"
                 class="mx-4 my-2 text-xl rounded cursor-pointer">
                 @if (isDarkModeEnabled()) {
-
                 <i
                     class="fas fa-moon text-white hover:text-hover transition-colors"></i>
                 } @else {
                 <i
                     class="fas fa-sun text-black hover:text-hover transition-colors"></i>
                 }
-
             </button>
+
+            <!-- CV Button -->
             <a
                 href="https://drive.google.com/file/d/11LxunCFAkL39uxmTEYjT1BgPPJ6ss-tW/view?usp=sharing"
                 target="_blank" rel="noopener noreferrer"
-                class="text-white bg-gray hover:bg-bg-dark dark:hover:bg-white  dark:hover:text-black  dark:text-white transition-colors focus:outline-none font-medium rounded-lg text-sm text-center my-auto px-4 py-2 dark:bg-bg-dark">CV
+                class="text-white bg-gray hover:bg-bg-dark dark:hover:bg-white dark:hover:text-black dark:text-white transition-colors focus:outline-none font-medium rounded-lg text-sm text-center my-auto px-4 py-2 dark:bg-bg-dark">CV
                 <i class="ps-2 fas fa-file"></i></a>
 
-            <button data-collapse-toggle="navbar-sticky" type="button"
+            <!-- Mobile Menu Button -->
+            <button (click)="toggleNavbar()"
                 class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
                 aria-controls="navbar-sticky" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
@@ -42,43 +44,43 @@
                 </svg>
             </button>
         </div>
-        <div
-            class="items-center justify-between hidden w-full md:flex md:w-auto md:order-1"
+
+        <!-- Navbar Menu -->
+        <div [class.hidden]="!isNavbarOpen"
+            class="items-center justify-between w-full md:flex md:w-auto md:order-1"
             id="navbar-sticky">
             <ul
-                class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0   dark:border-gray">
+                class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray">
                 <li>
-                    <a routerLink="/home"
+                    <a (click)="closeNavbar()" routerLink="/home"
                         routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white rounded-xl md:bg-transparent font-medium  hover:bg-gray transition-colors "
+                        class="block py-1 px-3 text-black dark:text-white rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
                         aria-current="page">Home</a>
                 </li>
-
                 <li>
-                    <a routerLink="/experience"
+                    <a (click)="closeNavbar()" routerLink="/experience"
                         routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium  hover:bg-gray transition-colors "
-                        aria-current="page">experience</a>
+                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        aria-current="page">Experience</a>
                 </li>
                 <li>
-                    <a routerLink="/projects"
+                    <a (click)="closeNavbar()" routerLink="/projects"
                         routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium  hover:bg-gray transition-colors "
-                        aria-current="page">projects</a>
+                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        aria-current="page">Projects</a>
                 </li>
                 <li>
-                    <a routerLink="/skills"
+                    <a (click)="closeNavbar()" routerLink="/skills"
                         routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium  hover:bg-gray transition-colors "
-                        aria-current="page">skills</a>
+                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        aria-current="page">Skills</a>
                 </li>
                 <li>
-                    <a routerLink="/contact"
+                    <a (click)="closeNavbar()" routerLink="/contact"
                         routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium  hover:bg-gray transition-colors "
-                        aria-current="page">contact</a>
+                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        aria-current="page">Contact</a>
                 </li>
-
             </ul>
         </div>
     </div>

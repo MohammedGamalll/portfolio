@@ -10,6 +10,18 @@ import { ThemeService } from '../../services/theme.service';
 })
 export class NavbarComponent {
   themeService = inject(ThemeService);
+  isNavbarOpen = false;
+
+  // Function to toggle the navbar state
+  toggleNavbar() {
+    this.isNavbarOpen = !this.isNavbarOpen;
+  }
+
+  // Function to close the navbar
+  closeNavbar() {
+    this.isNavbarOpen = false;
+  }
+
   toggleTheme() {
     this.themeService.toggleTheme();
   }
