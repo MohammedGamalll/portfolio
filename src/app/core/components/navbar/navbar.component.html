@@ -13,7 +13,7 @@
 
             <!-- Theme Toggle Button -->
             <button (click)="toggleTheme()"
-                class="mx-4 my-2 text-xl rounded cursor-pointer">
+                class="my-2 text-xl rounded cursor-pointer">
                 @if (isDarkModeEnabled()) {
                 <i
                     class="fas fa-moon text-white hover:text-hover transition-colors"></i>
@@ -23,12 +23,7 @@
                 }
             </button>
 
-            <!-- CV Button -->
-            <a
-                href="https://drive.google.com/file/d/11LxunCFAkL39uxmTEYjT1BgPPJ6ss-tW/view?usp=sharing"
-                target="_blank" rel="noopener noreferrer"
-                class="text-white bg-gray hover:bg-bg-dark dark:hover:bg-white dark:hover:text-black dark:text-white transition-colors focus:outline-none font-medium rounded-lg text-sm text-center my-auto px-4 py-2 dark:bg-bg-dark">CV
-                <i class="ps-2 fas fa-file"></i></a>
+
 
             <!-- Mobile Menu Button -->
             <button (click)="toggleNavbar()"
@@ -60,7 +55,7 @@
                 <li>
                     <a (click)="closeNavbar()" routerLink="/about"
                         routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        class="block py-1 px-3 text-black dark:text-white rounded-xl md:mt-0 mt-2 md:bg-transparent font-medium hover:bg-gray transition-colors"
                         aria-current="page">About</a>
                 </li>
 

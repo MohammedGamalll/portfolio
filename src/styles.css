@@ -7,10 +7,13 @@
 @plugin "flowbite/plugin";
 @custom-variant dark (&:where(.dark, .dark *));
 
-body {
-    font-family: 'Times New Roman', Times, serif;
 
-}
+
+
+/* body {
+    font-family: ;
+
+} */
 
 input.ng-invalid.ng-touched {
     @apply border-red-500 ring-1 ring-red-500

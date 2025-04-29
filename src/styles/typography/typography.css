@@ -6,3 +6,23 @@
     font-weight: 600;
     font-style: normal;
 }
+
+/* @font-face {
+    font-family: 'Playwrite AU SA';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/Oregano-Regular.ttf') format('truetype');
+}
+ */
+
+
+@font-face {
+    font-family: 'BreeSerif';
+    font-style: normal;
+    font-weight: 400;
+    src: url('/fonts/BreeSerif-Regular.ttf') format('truetype');
+}
+
+.body-font {
+    font-family: 'BreeSerif', sans-serif;
+}
