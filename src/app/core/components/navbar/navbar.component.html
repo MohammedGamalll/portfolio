@@ -58,6 +58,13 @@
                         aria-current="page">Home</a>
                 </li>
                 <li>
+                    <a (click)="closeNavbar()" routerLink="/about"
+                        routerLinkActive="!bg-gray transition-all !text-white"
+                        class="block py-1 px-3 text-black dark:text-white rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        aria-current="page">About</a>
+                </li>
+
+                <li>
                     <a (click)="closeNavbar()" routerLink="/experience"
                         routerLinkActive="!bg-gray transition-all !text-white"
                         class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
