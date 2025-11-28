@@ -1,8 +1,34 @@
-.head::after {
-    content: '';
-    display: block;
-    width: 20%;
-    margin: 0 auto;
-    border-bottom: 2px solid #808080;
-    margin-top: 10px;
+/* Line Clamp Utility */
+.line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+/* Cursor pointer for clickable description */
+.cursor-pointer {
+    cursor: pointer;
+}
+
+/* Custom Bounce Animation for Arrow */
+@keyframes bounce-x {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+}
+
+.animate-bounce-x {
+    animation: bounce-x 1s ease-in-out infinite;
+}
+
+/* Image Gradient Overlay */
+.bg-gradient-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.4), transparent);
 }

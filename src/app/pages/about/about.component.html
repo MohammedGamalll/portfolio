@@ -1,102 +1,168 @@
 <section
-    class="text-gray-600 body-font overflow-hidden px-5 md:px-25 dark:bg-bg-mid-dark dark:text-white ">
+    class="text-gray-600 body-font overflow-hidden px-5 md:px-25 dark:bg-bg-mid-dark dark:text-white py-20">
     <div class="container  py-24 mx-auto">
-        <h2
-            class="sm:text-3xl text-2xl font-medium title-font my-4 text-black dark:text-white text-center">About
-            Me</h2>
+        <div class="fade-in">
+            <h2
+                class="sm:text-4xl text-3xl font-bold title-font my-4 text-black dark:text-white text-center">About
+                Me</h2>
+            <div class="flex justify-center mb-4">
+                <div class="w-20 h-1 rounded-full bg-gray inline-flex"></div>
+            </div>
+        </div>
         <div
-            class="w-full md:max-w-2xl bg-light dark:bg-bg-mid-dark rounded-2xl shadow-xl p-6 md:p-12 border-l-4 border-gray mt-10 mx-auto">
+            class="w-full fade-in-up md:max-w-4xl bg-white dark:bg-bg-dark rounded-2xl shadow-2xl p-6 md:p-12 border-l-4 border-gray mt-10 mx-auto hover-lift">
 
             <!-- Header: Name + Title + Contact -->
             <div
-                class="mb-5 flex flex-col md:flex-row md:items-center md:justify-between gap-2">
+                class="mb-6 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
                 <div>
-
                     <h2
-                        class="font-semibold text-3xl text-gray">Mohammed
+                        class="font-bold text-3xl text-gray mb-2">Mohammed
                         Gamal Abd El-Ghani Sayed</h2>
                     <p
-                        class="text-md text-gray-700 dark:text-gray-200">Front-End
-                        Angular Developer</p>
+                        class="text-lg font-semibold text-black dark:text-white flex items-center gap-2">
+                        <i class="fas fa-code text-gray"></i>
+                        Full-Stack Developer
+                        <span class="text-gray">|</span>
+                        <span
+                            class="text-sm font-normal text-gray-600 dark:text-gray-400">Angular
+                            & .NET Core</span>
+                    </p>
                 </div>
-
             </div>
 
             <!-- About -->
-            <p
-                class="text-base md:text-lg text-gray-700 dark:text-gray-200 leading-relaxed ">
-                I'm a highly motivated junior front-end developer with a
-                passion for crafting user-focused and elegant web solutions.
-                With strong experience in Angular and Tailwind CSS, I thrive
-                on solving complex problems and delivering intuitive,
-                maintainable interfaces. Eager to contribute to dynamic
-                teams and continuously improve my skills.
-            </p>
+            <div class="mb-6">
+                <h3
+                    class="font-bold text-gray text-lg mb-3 flex items-center gap-2">
+                    <i class="fas fa-user"></i>
+                    About Me
+                </h3>
+                <p
+                    class="text-base md:text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                    I'm a passionate Full-Stack Developer specializing in <span
+                        class="text-gray font-semibold">Angular</span> and
+                    <span class="text-gray font-semibold">.NET Core</span>,
+                    dedicated to building modern, scalable, and user-centric web
+                    applications.
+                    With expertise in both frontend and backend technologies, I
+                    create end-to-end solutions that deliver exceptional user
+                    experiences
+                    and robust server-side functionality. I thrive on solving
+                    complex problems, writing clean maintainable code, and
+                    staying current
+                    with the latest industry trends and best practices.
+                </p>
+            </div>
 
             <!-- Quick Info -->
             <div
-                class="mt-4 flex gap-6 flex-wrap text-sm text-gray-500 dark:text-gray-400">
-                <span>📍 Faisal, Giza</span>
-                <span>📞 +20 112-7447-947</span>
-                <span>✉️
-                    <a href="mailto:mohammedgamall151@gmail.com"
-                        class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-
-                        mohammedgamall151&#64;gmail.com
-                    </a>
-                </span>
-                <span>
-                    <a
-                        href="https://drive.google.com/drive/folders/1N4tjIw9pQVd2QT3IVZtexKDK7gUeQmYc"
-                        target="_blank"
-                        class="text-gray-500 dark:text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out">
-
-                        <i class="fas fa-file"></i> Resume
-                    </a>
-                </span>
+                class="mb-6 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-3 text-sm">
+                    <div
+                        class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                        <i class="fas fa-map-marker-alt text-gray w-4"></i>
+                        <span>Faisal, Giza, Egypt</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                        <i class="fas fa-phone text-gray w-4"></i>
+                        <span>+20 112-7447-947</span>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                        <i class="fas fa-envelope text-gray w-4"></i>
+                        <a href="mailto:mohammedgamall151@gmail.com"
+                            class="hover:text-gray transition-colors duration-300">
+                            mohammedgamall151&#64;gmail.com
+                        </a>
+                    </div>
+                    <div
+                        class="flex items-center gap-2 text-gray-600 dark:text-gray-400">
+                        <i class="fas fa-file-alt text-gray w-4"></i>
+                        <a
+                            href="https://drive.google.com/drive/folders/1N4tjIw9pQVd2QT3IVZtexKDK7gUeQmYc"
+                            target="_blank"
+                            class="hover:text-gray transition-colors duration-300 flex items-center gap-1">
+                            View Resume
+                            <i class="fas fa-external-link-alt text-xs"></i>
+                        </a>
+                    </div>
+                </div>
             </div>
 
             <!-- Education -->
-            <div class="mt-8">
+            <div class="mb-6">
                 <h3
-                    class="font-bold text-gray text-lg mb-3">Education</h3>
-                <div class="flex items-center gap-4">
+                    class="font-bold text-gray text-lg mb-4 flex items-center gap-2">
+                    <i class="fas fa-graduation-cap"></i>
+                    Education
+                </h3>
+                <div
+                    class="flex items-start gap-4 p-4 bg-gray-50 dark:bg-gray-800/50 rounded-lg border border-gray-200 dark:border-gray-700">
                     <div
-                        class="shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-gray bg-opacity-10 text-gray dark:bg-gray/20 font-bold text-xl">
+                        class="shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-gray text-white font-bold text-xl">
                         🎓
                     </div>
                     <div>
                         <div
-                            class="font-semibold text-gray-800 dark:text-gray-200">Cairo
+                            class="font-bold text-gray-800 dark:text-white text-lg">Cairo
                             University</div>
                         <div
-                            class="text-sm text-gray-600 dark:text-gray-400">
-                            Faculty of Computer and AI, Information Systems
-                            Major<br>
-                            GPA: 3.3 &nbsp;|&nbsp; Expected Graduation: 2026
+                            class="text-sm text-gray-600 dark:text-gray-400 mt-1">
+                            Faculty of Computer and AI - Information Systems
+                            Major
+                        </div>
+                        <div class="flex gap-4 mt-2 text-sm">
+                            <span class="text-gray-600 dark:text-gray-400">
+                                <span
+                                    class="font-semibold text-gray">GPA:</span>
+                                3.3
+                            </span>
+                            <span class="text-gray-600 dark:text-gray-400">
+                                <span class="font-semibold text-gray">Expected
+                                    Graduation:</span> 2026
+                            </span>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 flex space-x-4 justify-center">
-                <a target="_blank"
-                    href="https://www.facebook.com/profile.php?id=100009764851306"
-                    class="text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><i
-                        class="fab fa-facebook-f"></i></a>
 
-                <a target="_blank"
-                    href="https://www.linkedin.com/in/mohammed-gamal-aa76b7248/"
-                    class="text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><i
-                        class="fab fa-linkedin-in"></i></a>
-                <a target="_blank"
-                    href="https://www.instagram.com/_mohammed._.gamal_/"
-                    class="text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><i
-                        class="fab fa-instagram"></i></a>
-                <a target="_blank" href="https://github.com/MohammedGamalll"
-                    class="text-gray-400 hover:text-black dark:hover:text-white transition-colors duration-300 ease-in-out"><i
-                        class="fab fa-github"></i></a>
-
+            <!-- Social Links -->
+            <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+                <h3
+                    class="font-bold text-gray text-lg mb-4 flex items-center gap-2">
+                    <i class="fas fa-share-alt"></i>
+                    Connect With Me
+                </h3>
+                <div class="flex space-x-4 justify-center">
+                    <a target="_blank"
+                        href="https://www.facebook.com/profile.php?id=100009764851306"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 
+                               text-gray hover:bg-gray hover:text-white transition-all duration-300 hover-scale">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a target="_blank"
+                        href="https://www.linkedin.com/in/mohammed-gamal-aa76b7248/"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 
+                               text-gray hover:bg-gray hover:text-white transition-all duration-300 hover-scale">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a target="_blank"
+                        href="https://www.instagram.com/_mohammed._.gamal_/"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 
+                               text-gray hover:bg-gray hover:text-white transition-all duration-300 hover-scale">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a target="_blank"
+                        href="https://github.com/MohammedGamalll"
+                        class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 dark:bg-gray-800 
+                               text-gray hover:bg-gray hover:text-white transition-all duration-300 hover-scale">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
             </div>
+
         </div>
 
     </div>

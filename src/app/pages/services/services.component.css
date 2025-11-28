@@ -1,0 +1,67 @@
+/* Service card layout */
+.service-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.service-card>div {
+    height: 100%;
+}
+
+/* Card hover effects */
+.service-card .group {
+    cursor: pointer;
+    will-change: transform;
+}
+
+.service-card:not(.animate-in) .group:hover {
+    transform: none;
+}
+
+/* Icon animations */
+.service-card .group:hover .fa-code,
+.service-card .group:hover .fa-server,
+.service-card .group:hover .fa-paint-brush,
+.service-card .group:hover .fa-mobile-alt,
+.service-card .group:hover .fa-database,
+.service-card .group:hover .fa-cloud,
+.service-card .group:hover .fa-shield-alt,
+.service-card .group:hover .fa-rocket {
+    animation: iconPulse 0.6s ease-in-out;
+}
+
+.service-card .group:hover .fa-sync-alt {
+    animation: spin 2s linear infinite;
+}
+
+/* Technology badge hover effect */
+.service-card span:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Feature list styling */
+.service-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.service-card li span:first-child {
+    color: #808080;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.service-card li:hover span:first-child {
+    color: #171717;
+}
+
+.dark .service-card li:hover span:first-child {
+    color: #FAFAFA;
+}
+
+@media (max-width: 768px) {
+    .service-card {
+        margin-bottom: 1rem;
+    }
+}

@@ -1,56 +1,128 @@
 
 <section
-    class="text-gray-600 body-font overflow-hidden px-5 md:px-25 dark:bg-bg-mid-dark dark:text-white md:h-screen flex flex-col justify-center items-center">
+    class="text-gray-600 body-font overflow-hidden px-5 md:px-25 dark:bg-bg-mid-dark dark:text-white min-h-screen flex flex-col justify-center items-center hero-section">
     <div class="container py-24 mx-auto">
         <div
-            class="md:w-full md:flex flex-row-reverse items-center justify-between capitalize">
+            class="md:w-full md:flex flex-row-reverse items-center justify-between gap-10">
+
+            <!-- Profile Image with Enhanced Animation -->
             <div
-                class=" relative w-70 h-70 md:w-90 md:h-90 mx-auto md:mx-0 rounded-full shadow-2xl image  object-cover object-center my-5 md:my-0">
+                class="relative w-70 h-70 md:w-96 md:h-96 mx-auto md:mx-0 rounded-full shadow-2xl image object-cover object-center my-5 md:my-0 animate-card">
                 <img
-                    class="object-cover object-center rounded-full w-full h-full block z-100"
-                    src="/images/skills/hero.jpg" alt="Mohammed Gamal" />
+                    class="object-cover object-center rounded-full w-full h-full block z-100 hover-scale"
+                    src="/images/skills/hero.jpg"
+                    alt="Mohammed Gamal - Full Stack Developer" />
+
+                <!-- Floating Tech Icons -->
+                <div class="floating-icons">
+                    <div class="tech-badge angular"><i
+                            class="fab fa-angular"></i></div>
+                    <div class="tech-badge dotnet"><i
+                            class="fas fa-code"></i></div>
+                    <div class="tech-badge code"><i
+                            class="fas fa-laptop-code"></i></div>
+                </div>
             </div>
-            <div class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0">
 
-                <h1
-                    class="text-gray-900 text-3xl title-font font-medium mb-2 typography">Mohammed
-                    Gamal </h1>
-                <h2>
-                    <span class="text-gray-500 text-lg mb-4 tw"></span>
-                </h2>
-                <div class="flex mt-4 mb-10 ">
-                    <span
-                        class="flex-grow border-b-2  border-gray-200 py-1 text-black dark:text-white ">I
-                        am a dedicated software engineer and frontend developer
-                        based in Cairo, passionate about delivering exceptional
-                        digital experiences. Blending technology with thoughtful
-                        design, I craft accessible and user-centered products
-                        that not only captivate but also empower users. As a
-                        freelancer, I am committed to building seamless,
-                        inclusive solutions that drive meaningful engagement and
-                        transform ideas into intuitive digital realities.
+            <!-- Hero Content -->
+            <div
+                class="lg:w-1/2 w-full lg:pr-10 lg:py-6 mb-6 lg:mb-0 hero-content">
 
-                    </span>
+                <!-- Animated Greeting -->
+                <div class="greeting-badge mb-3">
+                    <span class="wave">👋</span> Welcome to my portfolio
                 </div>
 
-                <div
-                    class="buttons flex flex-wrap gap-2 items-center">
-                    <a routerLink="/projects"
-                        class="text-white bg-gray hover:bg-bg-dark transition-colors focus:outline-none font-medium rounded-lg text-sm text-center my-auto px-6 py-2 ">My
-                        Projects <i class="fas fa-project-diagram"></i></a>
-                    <a routerLink="/contact"
-                        class="text-white bg-gray hover:bg-bg-dark transition-colors focus:outline-none font-medium rounded-lg text-sm text-center my-auto px-6 py-2 ">Contact
-                        Me <i class="fas fa-envelope"></i></a>
+                <h1
+                    class="text-gray-900 text-4xl md:text-5xl title-font font-bold mb-3 typography animate-card">
+                    Mohammed Gamal
+                </h1>
+
+                <h2 class="mb-6">
+                    <span
+                        class="text-gray-500 text-xl md:text-2xl font-semibold tw"></span>
+                </h2>
+
+                <!-- Enhanced Description -->
+                <div class="description-box mb-8 animate-card">
+                    <p
+                        class="text-base md:text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-4">
+                        <span class="highlight">Full-Stack Developer</span>
+                        specializing in building modern, scalable web
+                        applications with
+                        <span class="tech-highlight">Angular</span> and <span
+                            class="tech-highlight">.NET Core</span>.
+                    </p>
+                    <p
+                        class="text-base leading-relaxed text-gray-600 dark:text-gray-400 mb-3">
+                        🚀 Transforming innovative ideas into
+                        <strong>high-performance digital solutions</strong>
+                    </p>
+                    <p
+                        class="text-base leading-relaxed text-gray-600 dark:text-gray-400 mb-3">
+                        💡 Passionate about creating <strong>intuitive user
+                            experiences</strong> with clean, maintainable code
+                    </p>
+                    <p
+                        class="text-base leading-relaxed text-gray-600 dark:text-gray-400">
+                        🎯 Based in Cairo, Egypt • Available for
+                        <strong>freelance projects</strong> and collaborations
+                    </p>
+                </div>
+
+                <!-- Skills Quick View -->
+                <div class="skills-quick-view mb-8 animate-card">
+                    <div class="skill-tag">Angular</div>
+                    <div class="skill-tag">.NET Core</div>
+                    <div class="skill-tag">TypeScript</div>
+                    <div class="skill-tag">C#</div>
+                    <div class="skill-tag">RESTful APIs</div>
+                    <div class="skill-tag">SQL Server</div>
+                </div>
+
+                <!-- Enhanced Action Buttons -->
+                <div class="buttons-container animate-card">
+                    <a routerLink="/projects" class="btn btn-primary">
+                        <i class="fas fa-folder-open mr-2"></i>
+                        <span>View Projects</span>
+                        <i class="fas fa-arrow-right ml-2 arrow-icon"></i>
+                    </a>
+
+                    <a routerLink="/contact" class="btn btn-secondary">
+                        <i class="fas fa-paper-plane mr-2"></i>
+                        <span>Let's Talk</span>
+                        <i class="fas fa-comment-dots ml-2 pulse-icon"></i>
+                    </a>
+
                     <a
                         href="https://drive.google.com/drive/folders/1N4tjIw9pQVd2QT3IVZtexKDK7gUeQmYc"
-                        target="_blank"
-                        class="text-white bg-gray hover:bg-bg-dark transition-colors focus:outline-none font-medium rounded-lg text-sm text-center my-auto px-6 py-2 ">Resume<i
-                            class="ps-2 fas fa-file"></i></a>
+                        target="_blank" class="btn btn-outline">
+                        <i class="fas fa-download mr-2"></i>
+                        <span>Download Resume</span>
+                        <i class="fas fa-file-pdf ml-2"></i>
+                    </a>
+                </div>
 
+                <!-- Social Links -->
+                <div class="social-links mt-8 animate-card">
+                    <a href="https://github.com/MohammedGamalll" target="_blank"
+                        class="social-icon" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a
+                        href="https://www.linkedin.com/in/mohammed-gamal-72a906224/"
+                        target="_blank" class="social-icon" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="mailto:mohammedgamal30102002@gmail.com"
+                        class="social-icon" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
                 </div>
 
             </div>
 
         </div>
     </div>
+
 </section>

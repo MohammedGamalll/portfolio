@@ -1,56 +1,535 @@
- .image {
-     position: relative;
-     z-index: 5;
+/* Hero Section */
+.hero-section {
+    background: linear-gradient(135deg, #f5f5f5 0%, #e8e8e8 50%, #f0f0f0 100%);
+    position: relative;
+}
 
- }
+::ng-deep .dark .hero-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%);
+}
 
+/* Profile Image */
+.image {
+    position: relative;
+    z-index: 5;
+    animation: float 6s ease-in-out infinite;
+}
 
- .image::after {
-     content: '';
-     position: absolute;
-     top: 0%;
-     left: 0%;
-     width: 100%;
-     height: 100%;
-     border-radius: 50%;
-     box-shadow: 5px 0px 10px #00ffff, -5px 10px #00ffff;
+.image::after {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    box-shadow: 5px 0px 25px #808080, -5px 10px 25px #606060, 0px 0px 30px #a0a0a0;
+    filter: blur(10px);
+    z-index: -1;
+    animation: borderSpin infinite 5s linear;
+}
 
-     filter: blur(5px);
-     z-index: -1;
-     animation: borderSpin infinite 5s linear;
- }
+::ng-deep .dark .image::after {
+    box-shadow: 5px 0px 30px #808080, -5px 10px 30px #606060, 0px 0px 40px #a0a0a0;
+}
 
- ::ng-deep .dark .image::after {
-     box-shadow: 5px 0px 10px #00ffff, -5px 10px #00ffff;
- }
+@keyframes borderSpin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
- @keyframes borderSpin {
-     0% {
-         transform: rotate(0deg);
-     }
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
 
-     100% {
-         transform: rotate(360deg);
-     }
+/* Floating Tech Icons */
+.floating-icons {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
 
- }
+.tech-badge {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #ffffff, #f5f5f5);
+    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.2);
+    font-size: 24px;
+    animation: float-badge 4s ease-in-out infinite;
+    border: 2px solid rgba(128, 128, 128, 0.1);
+}
 
- h1 {
+::ng-deep .dark .tech-badge {
+    background: linear-gradient(135deg, #3d3d3d, #2d2d2d);
+    border: 2px solid rgba(128, 128, 128, 0.3);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
 
-     background: linear-gradient(to right, rgb(250, 80, 10), rgb(247, 12, 204), rgb(0, 106, 255), rgb(48, 248, 255), rgb(250, 80, 10));
-     color: transparent !important;
-     background-clip: text !important;
-     background-size: 200% auto;
-     animation: gradiant 5s linear infinite;
- }
+.tech-badge.angular {
+    top: 10%;
+    right: -10%;
+    color: #dd0031;
+    animation-delay: 0s;
+}
 
+.tech-badge.dotnet {
+    bottom: 20%;
+    right: -5%;
+    color: #512bd4;
+    animation-delay: 1s;
+}
 
- @keyframes gradiant {
-     0% {
-         background-position: 200% 50%;
-     }
+.tech-badge.code {
+    top: 50%;
+    left: -10%;
+    color: #808080;
+    animation-delay: 2s;
+}
 
-     100% {
-         background-position: 0% 50%;
-     }
- }
+@keyframes float-badge {
+    0%, 100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-15px) rotate(10deg);
+    }
+}
+
+/* Hero Content */
+.hero-content {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Greeting Badge */
+.greeting-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #808080, #606060);
+    border-radius: 50px;
+    font-size: 14px;
+    color: #ffffff;
+    font-weight: 600;
+    animation: fadeInDown 1s ease-out;
+    box-shadow: 0 4px 15px rgba(128, 128, 128, 0.3);
+}
+
+::ng-deep .dark .greeting-badge {
+    background: linear-gradient(135deg, #808080, #606060);
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(128, 128, 128, 0.5);
+}
+
+.wave {
+    display: inline-block;
+    animation: wave-animation 2s infinite;
+}
+
+@keyframes wave-animation {
+    0%, 100% { transform: rotate(0deg); }
+    10%, 30% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animated Title */
+h1 {
+    background: linear-gradient(to right, rgb(250, 80, 10), rgb(247, 12, 204), rgb(0, 106, 255), rgb(48, 248, 255), rgb(250, 80, 10));
+    color: transparent !important;
+    background-clip: text !important;
+    -webkit-background-clip: text !important;
+    background-size: 200% auto;
+    animation: gradiant 5s linear infinite;
+    line-height: 1.2;
+}
+
+@keyframes gradiant {
+    0% {
+        background-position: 200% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Description Box */
+.description-box {
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(248, 248, 248, 0.9));
+    border-left: 4px solid #808080;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.description-box:hover {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 1), rgba(245, 245, 245, 1));
+    transform: translateX(5px);
+    box-shadow: 0 6px 20px rgba(128, 128, 128, 0.15);
+}
+
+::ng-deep .dark .description-box {
+    background: linear-gradient(135deg, rgba(45, 45, 45, 0.6), rgba(30, 30, 30, 0.6));
+    border-left: 4px solid #808080;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+::ng-deep .dark .description-box:hover {
+    background: linear-gradient(135deg, rgba(45, 45, 45, 0.8), rgba(30, 30, 30, 0.8));
+    box-shadow: 0 6px 20px rgba(128, 128, 128, 0.3);
+}
+
+.highlight {
+    color: #808080;
+    font-weight: 700;
+    font-size: 1.1em;
+}
+
+::ng-deep .dark .highlight {
+    color: #a0a0a0;
+}
+
+.tech-highlight {
+    color: #606060;
+    font-weight: 600;
+    padding: 2px 8px;
+    background: linear-gradient(135deg, rgba(128, 128, 128, 0.15), rgba(128, 128, 128, 0.1));
+    border-radius: 6px;
+    border: 1px solid rgba(128, 128, 128, 0.2);
+}
+
+::ng-deep .dark .tech-highlight {
+    color: #b0b0b0;
+    background: linear-gradient(135deg, rgba(128, 128, 128, 0.25), rgba(128, 128, 128, 0.15));
+    border: 1px solid rgba(128, 128, 128, 0.3);
+}
+
+/* Skills Quick View */
+.skills-quick-view {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    animation: fadeIn 1.2s ease-out;
+}
+
+.skill-tag {
+    padding: 8px 16px;
+    background: linear-gradient(135deg, #808080, #606060);
+    color: white;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    cursor: default;
+    box-shadow: 0 4px 12px rgba(128, 128, 128, 0.3);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.skill-tag:hover {
+    transform: translateY(-5px) scale(1.08);
+    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.5);
+}
+
+::ng-deep .dark .skill-tag {
+    box-shadow: 0 4px 12px rgba(128, 128, 128, 0.5);
+}
+
+::ng-deep .dark .skill-tag:hover {
+    box-shadow: 0 8px 25px rgba(128, 128, 128, 0.7);
+}
+
+/* Enhanced Buttons */
+.buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #808080, #606060);
+    color: white;
+    box-shadow: 0 6px 20px rgba(128, 128, 128, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #606060, #505050);
+    box-shadow: 0 8px 30px rgba(128, 128, 128, 0.5);
+    transform: translateY(-3px);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #909090, #707070);
+    color: white;
+    box-shadow: 0 6px 20px rgba(144, 144, 144, 0.35);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #707070, #606060);
+    box-shadow: 0 8px 30px rgba(144, 144, 144, 0.5);
+    transform: translateY(-3px);
+}
+
+.btn-outline {
+    background: transparent;
+    color: #808080;
+    border: 2px solid #808080;
+}
+
+::ng-deep .dark .btn-outline {
+    color: #a0a0a0;
+    border-color: #a0a0a0;
+}
+
+.btn-outline:hover {
+    background: linear-gradient(135deg, #808080, #606060);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(128, 128, 128, 0.4);
+    border-color: transparent;
+}
+
+::ng-deep .dark .btn-outline:hover {
+    background: linear-gradient(135deg, #808080, #606060);
+    box-shadow: 0 8px 25px rgba(128, 128, 128, 0.5);
+}
+
+.arrow-icon {
+    transition: transform 0.3s ease;
+}
+
+.btn:hover .arrow-icon {
+    transform: translateX(5px);
+}
+
+.pulse-icon {
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.7;
+        transform: scale(1.1);
+    }
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(128, 128, 128, 0.15), rgba(128, 128, 128, 0.1));
+    border-radius: 50%;
+    color: #808080;
+    font-size: 20px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    border: 2px solid rgba(128, 128, 128, 0.2);
+}
+
+::ng-deep .dark .social-icon {
+    background: linear-gradient(135deg, rgba(128, 128, 128, 0.25), rgba(128, 128, 128, 0.15));
+    color: #a0a0a0;
+    border: 2px solid rgba(128, 128, 128, 0.3);
+}
+
+.social-icon:hover {
+    background: linear-gradient(135deg, #808080, #606060);
+    color: white;
+    transform: translateY(-5px) rotate(360deg);
+    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.5);
+    border-color: transparent;
+}
+
+::ng-deep .dark .social-icon:hover {
+    background: linear-gradient(135deg, #808080, #606060);
+    box-shadow: 0 8px 20px rgba(128, 128, 128, 0.6);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 2s ease-out;
+}
+
+.mouse {
+    width: 26px;
+    height: 40px;
+    border: 2px solid #808080;
+    border-radius: 15px;
+    position: relative;
+}
+
+::ng-deep .dark .mouse {
+    border-color: #a0a0a0;
+}
+
+.wheel {
+    width: 4px;
+    height: 8px;
+    background: linear-gradient(135deg, #808080, #606060);
+    border-radius: 2px;
+    position: absolute;
+    top: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll-down 2s infinite;
+}
+
+::ng-deep .dark .wheel {
+    background: linear-gradient(135deg, #a0a0a0, #808080);
+}
+
+@keyframes scroll-down {
+    0% {
+        top: 8px;
+        opacity: 1;
+    }
+    100% {
+        top: 24px;
+        opacity: 0;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .greeting-badge {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .description-box {
+        padding: 15px;
+    }
+
+    .skill-tag {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+
+    .social-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 18px;
+    }
+
+    .tech-badge {
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+    }
+
+    .scroll-indicator {
+        bottom: 20px;
+    }
+}

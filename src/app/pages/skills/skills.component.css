@@ -1,8 +1,18 @@
-.head::after {
-    content: '';
-    display: block;
-    width: 20%;
-    margin: 0 auto;
-    border-bottom: 2px solid #808080;
-    margin-top: 10px;
+/* Grid Fade Transition */
+.skills-grid {
+    transition: opacity 0.3s ease-in-out;
+}
+
+.skills-grid.filtering {
+    opacity: 0.5;
+}
+
+/* Category Button Active State */
+.category-btn-active {
+    transform: scale(1.05);
+}
+
+/* Smooth Grid Layout Transitions */
+.animate-card {
+    transition: all 0.3s ease-in-out;
 }

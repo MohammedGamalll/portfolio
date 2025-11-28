@@ -1,0 +1,622 @@
+/* ========================================
+   GLOBAL ANIMATIONS SYSTEM
+   ======================================== */
+
+/* ========================================
+   1. FADE ANIMATIONS
+   ======================================== */
+
+/* Fade in from top */
+.fade-in {
+    animation: fadeIn 0.8s ease-in forwards;
+}
+
+.fade-in-delay {
+    animation: fadeIn 0.8s ease-in 0.3s forwards;
+    opacity: 0;
+}
+
+.fade-in-delay-long {
+    animation: fadeIn 0.8s ease-in 0.6s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in from bottom */
+.fade-in-up {
+    animation: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in from left */
+.fade-in-left {
+    animation: fadeInLeft 0.8s ease-out forwards;
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Fade in from right */
+.fade-in-right {
+    animation: fadeInRight 0.8s ease-out forwards;
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ========================================
+   2. SCROLL ANIMATION CARDS
+   ======================================== */
+
+/* Animated card base */
+.animate-card {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animate-card.animate-in {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+}
+
+/* Staggered animations for children */
+.animate-card:nth-child(1).animate-in {
+    transition-delay: 0.05s;
+}
+
+.animate-card:nth-child(2).animate-in {
+    transition-delay: 0.1s;
+}
+
+.animate-card:nth-child(3).animate-in {
+    transition-delay: 0.15s;
+}
+
+.animate-card:nth-child(4).animate-in {
+    transition-delay: 0.2s;
+}
+
+.animate-card:nth-child(5).animate-in {
+    transition-delay: 0.25s;
+}
+
+.animate-card:nth-child(6).animate-in {
+    transition-delay: 0.3s;
+}
+
+.animate-card:nth-child(7).animate-in {
+    transition-delay: 0.35s;
+}
+
+.animate-card:nth-child(8).animate-in {
+    transition-delay: 0.4s;
+}
+
+.animate-card:nth-child(9).animate-in {
+    transition-delay: 0.45s;
+}
+
+.animate-card:nth-child(10).animate-in {
+    transition-delay: 0.5s;
+}
+
+.animate-card:nth-child(11).animate-in {
+    transition-delay: 0.55s;
+}
+
+.animate-card:nth-child(12).animate-in {
+    transition-delay: 0.6s;
+}
+
+/* ========================================
+   3. HOVER EFFECTS
+   ======================================== */
+
+/* Scale on hover */
+.hover-scale {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-scale:hover {
+    transform: scale(1.05);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+        0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.dark .hover-scale:hover {
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3),
+        0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Scale slightly */
+.hover-scale-sm {
+    transition: transform 0.3s ease;
+}
+
+.hover-scale-sm:hover {
+    transform: scale(1.1);
+}
+
+/* Lift effect */
+.hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-lift:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.dark .hover-lift:hover {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Slide right on hover */
+.hover-slide-right {
+    transition: transform 0.3s ease;
+}
+
+.hover-slide-right:hover {
+    transform: translateX(8px);
+}
+
+/* Glow effect */
+.hover-glow {
+    transition: box-shadow 0.3s ease;
+}
+
+.hover-glow:hover {
+    box-shadow: 0 0 20px rgba(128, 128, 128, 0.5);
+}
+
+.dark .hover-glow:hover {
+    box-shadow: 0 0 20px rgba(250, 250, 250, 0.3);
+}
+
+/* ========================================
+   4. ICON ANIMATIONS
+   ======================================== */
+
+/* Icon pulse */
+.icon-pulse:hover {
+    animation: iconPulse 0.6s ease-in-out;
+}
+
+@keyframes iconPulse {
+
+    0%,
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    50% {
+        transform: scale(1.1) rotate(5deg);
+    }
+}
+
+/* Icon rotate */
+.icon-rotate:hover {
+    animation: iconRotate 0.5s ease-in-out;
+}
+
+@keyframes iconRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Icon bounce */
+.icon-bounce:hover {
+    animation: iconBounce 0.6s ease-in-out;
+}
+
+@keyframes iconBounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    25% {
+        transform: translateY(-5px);
+    }
+
+    50% {
+        transform: translateY(0);
+    }
+
+    75% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Icon shake */
+.icon-shake:hover {
+    animation: iconShake 0.5s ease-in-out;
+}
+
+@keyframes iconShake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+}
+
+/* Continuous spin (for loading, sync icons) */
+.icon-spin {
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   5. BUTTON ANIMATIONS
+   ======================================== */
+
+/* Button pulse */
+.btn-pulse:hover {
+    animation: buttonPulse 1s infinite;
+}
+
+@keyframes buttonPulse {
+
+    0%,
+    100% {
+        box-shadow: 0 0 0 0 rgba(128, 128, 128, 0.4);
+    }
+
+    50% {
+        box-shadow: 0 0 0 10px rgba(128, 128, 128, 0);
+    }
+}
+
+/* Button slide */
+.btn-slide {
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.btn-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: left 0.5s ease;
+}
+
+.btn-slide:hover::before {
+    left: 100%;
+}
+
+/* ========================================
+   6. SHIMMER EFFECTS
+   ======================================== */
+
+/* Shimmer overlay */
+.shimmer-overlay {
+    position: relative;
+    overflow: hidden;
+}
+
+.shimmer-overlay::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.3),
+            transparent);
+    transform: translateX(-100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.shimmer-overlay:hover::after {
+    opacity: 1;
+    animation: shimmer 1.5s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    from {
+        transform: translateX(-100%);
+    }
+
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* Dark mode shimmer */
+.dark .shimmer-overlay::after {
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(128, 128, 128, 0.3),
+            transparent);
+}
+
+/* ========================================
+   7. GRADIENT ANIMATIONS
+   ======================================== */
+
+/* Animated gradient background */
+.gradient-animate {
+    background-size: 200% 200%;
+    animation: gradientShift 5s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* ========================================
+   8. BORDER ANIMATIONS
+   ======================================== */
+
+/* Animated border */
+.border-animate {
+    position: relative;
+}
+
+.border-animate::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 2px;
+    background: linear-gradient(45deg,
+            transparent,
+            rgba(128, 128, 128, 0.5),
+            transparent);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.border-animate:hover::before {
+    opacity: 1;
+    animation: borderRotate 3s linear infinite;
+}
+
+@keyframes borderRotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* ========================================
+   9. LOADING ANIMATIONS
+   ======================================== */
+
+/* Pulse animation */
+.pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Bounce animation */
+.bounce {
+    animation: bounce 1s infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-25%);
+    }
+}
+
+/* ========================================
+   10. TEXT ANIMATIONS
+   ======================================== */
+
+/* Text slide in */
+.text-slide-in {
+    animation: textSlideIn 0.6s ease-out forwards;
+}
+
+@keyframes textSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Text highlight on hover */
+.text-highlight {
+    background-size: 0% 100%;
+    background-repeat: no-repeat;
+    background-position: 0% 100%;
+    transition: background-size 0.3s ease;
+}
+
+.text-highlight:hover {
+    background-size: 100% 100%;
+}
+
+/* ========================================
+   11. UTILITY ANIMATIONS
+   ======================================== */
+
+/* Smooth transitions for theme changes */
+.smooth-transition {
+    transition: background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease;
+}
+
+/* Delay utilities */
+.delay-100 {
+    animation-delay: 0.1s;
+}
+
+.delay-200 {
+    animation-delay: 0.2s;
+}
+
+.delay-300 {
+    animation-delay: 0.3s;
+}
+
+.delay-400 {
+    animation-delay: 0.4s;
+}
+
+.delay-500 {
+    animation-delay: 0.5s;
+}
+
+/* ========================================
+   12. ACCESSIBILITY
+   ======================================== */
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .animate-card,
+    .hover-scale,
+    .hover-lift,
+    .hover-scale-sm,
+    .shimmer-overlay::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* ========================================
+   13. RESPONSIVE ADJUSTMENTS
+   ======================================== */
+
+@media (max-width: 768px) {
+
+    /* Reduce animation intensity on mobile */
+    .hover-scale:hover {
+        transform: scale(1.02);
+    }
+
+    .hover-lift:hover {
+        transform: translateY(-3px);
+    }
+
+    .animate-card {
+        transform: translateY(20px);
+    }
+}

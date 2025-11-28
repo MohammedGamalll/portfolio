@@ -1,26 +1,184 @@
 <section
-  class="text-gray-600 body-font overflow-hidden px-5 md:px-25 dark:bg-bg-mid-dark dark:text-white 100vh">
-
-  <section class="text-gray-600 body-font">
-    <div class="container py-24 mx-auto">
+  class="text-gray-600 body-font overflow-hidden px-5 md:px-25 dark:bg-bg-mid-dark dark:text-white min-h-screen py-20">
+  <div class="container py-24 mx-auto">
+    <!-- Header Section -->
+    <div class="fade-in text-center mb-16">
       <h2
-        class="sm:text-3xl text-2xl font-medium title-font my-4 text-black dark:text-white text-center">My
-        Skills</h2>
+        class="sm:text-4xl text-3xl font-bold title-font mb-4 text-black dark:text-white">
+        Technical Skills
+      </h2>
+      <div class="flex justify-center mb-4">
+        <div class="w-20 h-1 rounded-full bg-gray inline-flex"></div>
+      </div>
+      <p
+        class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-600 dark:text-gray-300">
+        A comprehensive overview of my technical expertise across frontend,
+        backend, and development tools.
+      </p>
+    </div>
 
-      <div
-        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8 px-4 md:px-0 pt-10">
-        @for (skill of skills; track $index) { <div
-          class="flex flex-col items-center hover:scale-110 transition-transform duration-300 ease-in-out shadow-lg py-4 px-4 rounded-lg bg-white dark:bg-bg-dark text-black dark:text-white">
-          <img
-            [src]="'/images/skills/' + skill.file"
-            [alt]="skill.name"
-            class="w-16 h-16" />
-          <span class="mt-4 text-lg font-medium px-4">{{ skill.name }}</span>
-        </div>}
-
+    <!-- Category Filter -->
+    <div class="fade-in-delay mb-12">
+      <div class="flex flex-wrap justify-center gap-3">
+        @for (category of categories; track category) {
+        <button
+          (click)="filterByCategory(category)"
+          [class.bg-gray]="selectedCategory === category"
+          [class.text-white]="selectedCategory === category"
+          [class.bg-gray-100]="selectedCategory !== category"
+          [class.dark:bg-gray-800]="selectedCategory !== category"
+          [class.text-gray-700]="selectedCategory !== category"
+          [class.dark:text-gray-300]="selectedCategory !== category"
+          class="px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 
+                           hover-scale cursor-pointer shadow-md hover:shadow-lg">
+          {{ category }}
+        </button>
+        }
       </div>
     </div>
 
-  </section>
+    <!-- Skills Grid -->
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+      @for (skill of filteredSkills; track skill.name) {
+      <div class="animate-card group">
+        <div
+          class="relative h-full bg-white dark:bg-bg-dark rounded-xl p-6 shadow-lg 
+                           hover-lift border-2 border-transparent hover:border-gray transition-all duration-300">
 
+          <!-- Skill Icon & Name -->
+          <div class="flex flex-col items-center mb-4">
+            <div class="relative w-20 h-20 mb-4">
+              <img
+                [src]="'/images/skills/' + skill.file"
+                [alt]="skill.name"
+                class="w-full h-full object-contain hover-scale icon-pulse transition-transform duration-300" />
+
+              <!-- Glow Effect on Hover -->
+              <div
+                class="absolute inset-0 rounded-full bg-gray/20 opacity-0 group-hover:opacity-100 
+                                        blur-xl transition-opacity duration-300 -z-10"></div>
+            </div>
+
+            <h3
+              class="text-lg font-bold text-black dark:text-white text-center mb-2 
+                                   group-hover:text-gray transition-colors duration-300">
+              {{ skill.name }}
+            </h3>
+
+            <!-- Level Badge -->
+            <span
+              [class]="getLevelBadgeColor(skill.level)"
+              class="px-3 py-1 rounded-full text-xs font-semibold mb-3">
+              {{ skill.level }}
+            </span>
+          </div>
+
+          <!-- Category Tag -->
+          <div class="flex items-center justify-center mb-3">
+            <span
+              class="text-xs text-gray-600 dark:text-gray-400 flex items-center gap-1">
+              <i class="fas fa-tag"></i>
+              {{ skill.category }}
+            </span>
+          </div>
+
+          <!-- Description -->
+          <p
+            class="text-xs text-gray-600 dark:text-gray-300 text-center leading-relaxed 
+                              opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            {{ skill.description }}
+          </p>
+
+          <!-- Decorative Corner -->
+          <div class="absolute top-0 right-0 w-16 h-16 overflow-hidden">
+            <div class="absolute top-2 right-2 w-8 h-8 bg-gray/10 rounded-full 
+                                    transform rotate-45 opacity-0 group-hover:opacity-100 
+                                    transition-all duration-300"></div>
+          </div>
+        </div>
+      </div>
+      }
+    </div>
+
+    <!-- Skills Summary -->
+    <div class="mt-16 fade-in-delay-long">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <!-- Frontend Count -->
+        <div
+          class="text-center p-6 bg-white dark:bg-bg-dark rounded-xl shadow-lg hover-lift">
+          <div class="text-3xl font-bold text-gray mb-2">
+            {{ getFrontendCount() }}
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Frontend Skills
+          </div>
+        </div>
+
+        <!-- Backend Count -->
+        <div
+          class="text-center p-6 bg-white dark:bg-bg-dark rounded-xl shadow-lg hover-lift">
+          <div class="text-3xl font-bold text-gray mb-2">
+            {{ getBackendCount() }}
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Backend Skills
+          </div>
+        </div>
+
+        <!-- Expert Level Count -->
+        <div
+          class="text-center p-6 bg-white dark:bg-bg-dark rounded-xl shadow-lg hover-lift">
+          <div class="text-3xl font-bold text-gray mb-2">
+            {{ getExpertCount() }}
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Expert Level
+          </div>
+        </div>
+
+        <!-- Total Skills -->
+        <div
+          class="text-center p-6 bg-white dark:bg-bg-dark rounded-xl shadow-lg hover-lift">
+          <div class="text-3xl font-bold text-gray mb-2">
+            {{ getTotalSkills() }}
+          </div>
+          <div class="text-sm text-gray-600 dark:text-gray-400">
+            Total Skills
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Legend -->
+    <div class="mt-12 fade-in-delay-long">
+      <div
+        class="max-w-3xl mx-auto bg-white dark:bg-bg-dark rounded-xl p-6 shadow-lg">
+        <h3 class="text-lg font-bold text-gray mb-4 text-center">
+          Proficiency Levels
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-green-500"></span>
+            <span class="text-sm text-gray-600 dark:text-gray-400">Expert</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-blue-500"></span>
+            <span
+              class="text-sm text-gray-600 dark:text-gray-400">Advanced</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-yellow-500"></span>
+            <span
+              class="text-sm text-gray-600 dark:text-gray-400">Intermediate</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-3 h-3 rounded-full bg-gray-500"></span>
+            <span
+              class="text-sm text-gray-600 dark:text-gray-400">Beginner</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

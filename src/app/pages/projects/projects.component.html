@@ -1,56 +1,146 @@
 <section
-    class="text-gray-600 body-font overflow-hidden px-5 md:px-25 dark:bg-bg-mid-dark dark:text-white 100vh">
-
-    <section class="text-gray-600 body-font">
-        <div class="container py-24 mx-auto">
+    class="text-gray-600 body-font overflow-hidden px-5 md:px-25 dark:bg-bg-mid-dark dark:text-white min-h-screen py-20">
+    <div class="container py-24 mx-auto">
+        <!-- Header Section -->
+        <div class="fade-in text-center mb-16">
             <h2
-                class="sm:text-3xl text-2xl font-medium title-font my-4 text-black dark:text-white text-center">My
-                Projects</h2>
+                class="sm:text-4xl text-3xl font-bold title-font mb-4 text-black dark:text-white">
+                My Projects
+            </h2>
+            <div class="flex justify-center mb-4">
+                <div class="w-20 h-1 rounded-full bg-gray inline-flex"></div>
+            </div>
+            <p
+                class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto text-gray-600 dark:text-gray-300">
+                A showcase of my full-stack development projects using Angular,
+                .NET, and modern web technologies.
+            </p>
+        </div>
 
-            <div class="flex flex-wrap pt-6">
-                @for (project of projects; track project.title) {
+        <!-- Projects Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-8 pt-6">
+            @for (project of projects; track project.title) {
+            <div class="animate-card group">
                 <div
-                    class=" md:w-1/2 hover:scale-105 transition-all duration-300 ease-in-out p-4 ">
-                    <div
-                        class="h-full border-2 border-gray-200 border-opacity-60 rounded-lg overflow-hidden shadow-lg">
-                        <a [href]="project.live"
-                            target="_blank">
-                            <img
-                                class="lg:h-55 md:h-36 w-full"
-                                [src]="project.image" alt="Project Image">
-                            <div class="p-6">
-                                <h2
-                                    class="tracking-widest text-xs title-font font-medium text-gray mb-1">{{project.type}}</h2>
-                                <h1
-                                    class="title-font text-lg font-semibold text-black dark:text-white mb-3">{{project.title}}</h1>
-                                <p
-                                    class="text-sm mb-3 capitalize text-gray">{{project.description}}
-                                </p>
-                                <div
-                                    class="flex items-center flex-wrap justify-center gap-4">
-                                    <a
-                                        class="text-gray dark:hover:text-white hover:text-black transition-all hover:scale-120 inline-flex items-center md:mb-2 lg:mb-0"
-                                        [href]="project.github"
-                                        target="_blank">
-                                        <i class="fa-brands fa-github"></i>
-                                    </a>
-                                    <a
-                                        class="text-gray dark:hover:text-white hover:text-black transition-all hover:scale-120 inline-flex items-center md:mb-2 lg:mb-0"
-                                        [href]="project.live"
-                                        target="_blank">
-                                        <i class="fa-solid fa-globe"></i>
+                    class="relative h-full bg-white dark:bg-bg-dark rounded-xl overflow-hidden shadow-lg hover-lift">
 
-                                    </a>
+                    <!-- Project Image with Overlay -->
+                    <div class="relative overflow-hidden h-64 shimmer-overlay">
+                        <img
+                            class="w-full h-full object-cover hover-scale transition-transform duration-500"
+                            [src]="project.image"
+                            [alt]="project.title">
 
-                                </div>
+                        <!-- Image Overlay on Hover -->
+                        <div
+                            class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent 
+                                   opacity-0 group-hover:opacity-100 transition-opacity duration-300 
+                                   flex items-end justify-center p-6">
+                            <div
+                                class="flex gap-6 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                                @if (project.github) {
+                                <a
+                                    [href]="project.github"
+                                    target="_blank"
+                                    class="w-12 h-12 rounded-full bg-gray hover:bg-white text-white hover:text-black 
+                                           flex items-center justify-center transition-all duration-300 hover-scale icon-pulse"
+                                    title="View Code">
+                                    <i class="fa-brands fa-github text-xl"></i>
+                                </a>
+                                }
+                                @if (project.live) {
+                                <a
+                                    [href]="project.live"
+                                    target="_blank"
+                                    class="w-12 h-12 rounded-full bg-gray hover:bg-white text-white hover:text-black 
+                                           flex items-center justify-center transition-all duration-300 hover-scale icon-pulse"
+                                    title="Live Demo">
+                                    <i class="fa-solid fa-globe text-xl"></i>
+                                </a>
+                                }
                             </div>
-                        </a>
+                        </div>
+
+                        <!-- Type Badge -->
+                        <div class="absolute top-4 left-4">
+                            <span
+                                class="px-4 py-2 rounded-full text-xs font-semibold bg-gray text-white shadow-lg hover-scale-sm">
+                                {{ project.type }}
+                            </span>
+                        </div>
+                    </div>
+
+                    <!-- Project Content -->
+                    <div class="p-6">
+                        <!-- Title -->
+                        <h3
+                            class="text-xl font-bold text-black dark:text-white mb-3 
+                                   group-hover:text-gray dark:group-hover:text-gray transition-colors duration-300">
+                            {{ project.title }}
+                        </h3>
+
+                        <!-- Description -->
+                        <div
+                            (click)="toggleDescription(project.title)"
+                            class="cursor-pointer mb-4">
+                            <p
+                                [class.line-clamp-4]="!isExpanded(project.title)"
+                                class="text-sm text-gray-600 dark:text-gray-300 leading-relaxed transition-all duration-300">
+                                {{ project.description }}
+                            </p>
+                            <button
+                                class="text-xs text-gray hover:text-black dark:hover:text-white mt-2 
+                                       flex items-center gap-1 transition-colors duration-300 font-semibold">
+                                <span>{{ isExpanded(project.title) ? 'Show Less'
+                                    : 'Read More' }}</span>
+                                <i
+                                    [class.fa-chevron-down]="!isExpanded(project.title)"
+                                    [class.fa-chevron-up]="isExpanded(project.title)"
+                                    class="fa-solid transition-transform duration-300"></i>
+                            </button>
+                        </div>
+
+                        <!-- Links Footer -->
+                        <div
+                            class="flex items-center justify-between pt-4 border-t border-gray-200 dark:border-gray-700">
+                            <div class="flex gap-4">
+                                @if (project.github) {
+                                <a
+                                    [href]="project.github"
+                                    target="_blank"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-gray dark:hover:text-gray 
+                                           transition-all duration-300 hover-slide-right flex items-center gap-2 text-sm"
+                                    title="View Code">
+                                    <i class="fa-brands fa-github"></i>
+                                    <span class="hidden sm:inline">Code</span>
+                                </a>
+                                }
+                                @if (project.live) {
+                                <a
+                                    [href]="project.live"
+                                    target="_blank"
+                                    class="text-gray-600 dark:text-gray-400 hover:text-gray dark:hover:text-gray 
+                                           transition-all duration-300 hover-slide-right flex items-center gap-2 text-sm"
+                                    title="Live Demo">
+                                    <i
+                                        class="fa-solid fa-external-link-alt"></i>
+                                    <span class="hidden sm:inline">Live
+                                        Demo</span>
+                                </a>
+                                }
+                            </div>
+
+                            <!-- View More Arrow -->
+                            <div
+                                class="text-gray opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                <i
+                                    class="fa-solid fa-arrow-right text-lg animate-bounce-x"></i>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                }
-
             </div>
+            }
         </div>
-    </section>
-
+    </div>
 </section>

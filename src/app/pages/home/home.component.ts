@@ -17,8 +17,10 @@ import TWriter from 't-writer.js';
 })
 export class HomeComponent implements AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
+  
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
+      // Typewriter Effect
       const target = document.querySelector('.tw');
       const writer = new TWriter(target, {
         loop: true,
@@ -34,14 +36,36 @@ export class HomeComponent implements AfterViewInit {
         .type('Frontend Developer (Angular)')
         .rest(1000)
         .remove(30)
-        .type('Backend Developer (ASP.NET Core)')
+        .type('Backend Developer (.NET Core)')
         .rest(1000)
         .changeOps({ deleteSpeed: 20 })
-        .remove(32)
+        .remove(31)
         .type('Full Stack Developer')
         .rest(1000)
         .clear()
         .start();
+
+      // Scroll Animations
+      this.observeElements();
     }
+  }
+
+  private observeElements(): void {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+          }
+        });
+      },
+      {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      }
+    );
+
+    const animatedElements = document.querySelectorAll('.animate-card');
+    animatedElements.forEach((el) => observer.observe(el));
   }
 }
