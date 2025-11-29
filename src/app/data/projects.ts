@@ -27,7 +27,7 @@ export const PROJECTS: ProjectItem[] = [
     live: '',
   },
   {
-    title: 'Fake Store - E-Commerce Application',
+    title: 'E-Commerce Application',
     type: 'ANGULAR',
     description: `A modern, responsive e-commerce platform built with Angular. Users can browse products, view details, add items to their cart, and complete purchases. The site features user authentication, product search, and a smooth checkout process, all optimized for both desktop and mobile devices.`,
     image: '/images/ecommerce.png',
