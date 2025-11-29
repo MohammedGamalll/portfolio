@@ -15,7 +15,7 @@ export const PROJECTS: ProjectItem[] = [
     type: 'ANGULAR',
     description: `A full-featured social media application built with Angular. Implements user authentication with JWT tokens, post creation and management with CRUD operations, real-time comment system, user profile pages with follower/following functionality, and timeline feed with infinite scroll. Features reactive forms for post/comment input, HTTP interceptors for API requests, route guards for protected pages, and state management using RxJS observables. Built with Angular Router for SPA navigation, lazy loading modules for performance, and responsive UI using CSS Grid and Flexbox. Integrates with RESTful API for data persistence.`,
     image: '/images/socialhub.png',
-    github: 'https://github.com/MohammedGamalll/Social-Hub',
+    github: 'https://github.com/MohammedGamalll/SocialHub',
     live: 'https://social-hub-sigma.vercel.app/#/login',
   },
   {
@@ -48,7 +48,7 @@ export const PROJECTS: ProjectItem[] = [
     description: `A professional Arabic service platform built with Angular for El Weheby Company - a water tank cleaning and maintenance provider in Riyadh. Features RTL (Right-to-Left) layout architecture, dynamic service showcase with 8 service categories, Owl Carousel integration for customer testimonials, real-time contact form with validation, WhatsApp and phone call integration using href protocols, promotional countdown timers, blog section with pagination, and SEO-optimized meta tags. Implements lazy loading for images, smooth scroll animations, responsive grid layouts using CSS Flexbox, and form handling with reactive forms. Built with Angular Router for SPA navigation, TypeScript for type safety, and custom CSS with Arabic web fonts.`,
     image: '/images/elweheby.png',
     live: 'https://www.elweheby.com/',
-    github: 'https://github.com/MohammedGamalll/ElWeheby',
+    github: '',
   },
 
   {
