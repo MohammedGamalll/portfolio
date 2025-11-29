@@ -17,7 +17,7 @@ import TWriter from 't-writer.js';
 })
 export class HomeComponent implements AfterViewInit {
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {}
-  
+
   ngAfterViewInit() {
     if (isPlatformBrowser(this.platformId)) {
       // Typewriter Effect
