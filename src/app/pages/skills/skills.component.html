@@ -52,6 +52,9 @@
               <img
                 [src]="'/images/skills/' + skill.file"
                 [alt]="skill.name"
+                loading="lazy"
+                decoding="async"
+                fetchpriority="low"
                 class="w-full h-full object-contain hover-scale icon-pulse transition-transform duration-300" />
 
               <!-- Glow Effect on Hover -->

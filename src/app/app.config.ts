@@ -1,8 +1,10 @@
 import { ApplicationConfig, provideZoneChangeDetection } from '@angular/core';
 import {
+  PreloadAllModules,
   provideRouter,
   withHashLocation,
   withInMemoryScrolling,
+  withPreloading,
   withViewTransitions,
 } from '@angular/router';
 
@@ -21,8 +23,9 @@ export const appConfig: ApplicationConfig = {
     provideRouter(
       routes,
       withHashLocation(),
-      withViewTransitions(),
-      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' })
+      withViewTransitions({ skipInitialTransition: true }),
+      withInMemoryScrolling({ scrollPositionRestoration: 'enabled' }),
+      withPreloading(PreloadAllModules)
     ),
     provideClientHydration(withEventReplay()),
     provideToastr(),

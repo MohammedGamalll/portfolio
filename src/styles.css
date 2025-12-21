@@ -8,7 +8,45 @@
 @plugin "flowbite/plugin";
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* ========================================
+   IMAGE LOADING OPTIMIZATIONS
+   ======================================== */
 
+/* Placeholder background for images while loading */
+img {
+    background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: imageLoading 1.5s ease-in-out infinite;
+}
+
+.dark img {
+    background: linear-gradient(90deg, #2d2d2d 25%, #3d3d3d 50%, #2d2d2d 75%);
+}
+
+img[src] {
+    animation: none;
+    background: transparent;
+}
+
+@keyframes imageLoading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Optimize rendering for lazy loaded images */
+img[loading="lazy"] {
+    content-visibility: auto;
+}
+
+/* Reduce layout shift */
+img {
+    aspect-ratio: attr(width) / attr(height);
+}
 
 
 /* body {

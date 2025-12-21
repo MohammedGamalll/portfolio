@@ -6,6 +6,20 @@
     <base href="/">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="portfolio.png">
+
+    <!-- Preload critical fonts -->
+    <link rel="preload" href="fonts/fa-solid-900.woff2" as="font"
+      type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/fa-brands-400.woff2" as="font"
+      type="font/woff2" crossorigin>
+
+    <!-- Preload hero image -->
+    <link rel="preload" href="images/skills/hero.jpg" as="image"
+      fetchpriority="high">
+
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
   </head>
   <body class="body-font">
     <app-root></app-root>

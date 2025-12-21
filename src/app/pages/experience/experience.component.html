@@ -163,7 +163,10 @@
                                 <img
                                     class="h-64 w-full object-contain p-4 hover-scale"
                                     [src]="cert.imagePath"
-                                    [alt]="cert.title">
+                                    [alt]="cert.title"
+                                    loading="lazy"
+                                    decoding="async"
+                                    fetchpriority="low">
                             </div>
 
                             <!-- Certificate Info -->

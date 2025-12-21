@@ -29,7 +29,10 @@
                         <img
                             class="w-full h-full object-cover hover-scale transition-transform duration-500"
                             [src]="project.image"
-                            [alt]="project.title">
+                            [alt]="project.title"
+                            loading="lazy"
+                            decoding="async"
+                            fetchpriority="low">
 
                         <!-- Image Overlay on Hover -->
                         <div
