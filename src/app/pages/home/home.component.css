@@ -5,7 +5,7 @@
 }
 
 ::ng-deep .dark .hero-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 50%, #1f1f1f 100%);
+    background: transparent;
 }
 
 /* Profile Image */

@@ -11,6 +11,14 @@ export interface ProjectItem {
 
 export const PROJECTS: ProjectItem[] = [
   {
+    title: 'AstroStore - E-commerce Platform',
+    type: '.NET Core MVC',
+    description: `A full-stack e-commerce solution built with ASP.NET Core MVC and Entity Framework Core. Features a responsive storefront with advanced product filtering, instant search, and a smart persistent cart. Includes a comprehensive Admin Dashboard for managing products, variants (size/color), and inventory with low-stock alerts. Implements a dynamic shipping engine based on location, Guest Checkout, and Paymob integration for payments. Built with .NET Identity for secure authentication, supports order tracking with automated email notifications, and is optimized for performance using caching and compression.`,
+    image: '/images/astrostore.png',
+    github: '',
+    live: 'https://mohammedgamall-astro9.runasp.net/',
+  },
+  {
     title: 'Social Hub - Social Media Platform',
     type: 'ANGULAR',
     description: `A full-featured social media application built with Angular. Implements user authentication with JWT tokens, post creation and management with CRUD operations, real-time comment system, user profile pages with follower/following functionality, and timeline feed with infinite scroll. Features reactive forms for post/comment input, HTTP interceptors for API requests, route guards for protected pages, and state management using RxJS observables. Built with Angular Router for SPA navigation, lazy loading modules for performance, and responsive UI using CSS Grid and Flexbox. Integrates with RESTful API for data persistence.`,

@@ -9,6 +9,18 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 /* ========================================
+   GLOBAL BACKGROUND
+   ======================================== */
+body {
+    min-height: 100vh;
+}
+
+.dark body,
+body:where(.dark, .dark *) {
+    background: linear-gradient(135deg, black 0, #2d2d2d 50%, black 100%);
+}
+
+/* ========================================
    IMAGE LOADING OPTIMIZATIONS
    ======================================== */
 
