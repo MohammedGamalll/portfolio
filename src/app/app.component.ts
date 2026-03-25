@@ -4,6 +4,8 @@ import { FooterComponent } from './core/components/footer/footer.component';
 import { MainLayoutComponent } from './core/layouts/main-layout/main-layout.component';
 import { NavbarComponent } from './core/components/navbar/navbar.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CursorFollowerComponent } from './shared/components/cursor-follower/cursor-follower.component';
+import { FloatingElementsComponent } from './shared/components/floating-elements/floating-elements.component';
 
 @Component({
   selector: 'app-root',
@@ -13,6 +15,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     FooterComponent,
     MainLayoutComponent,
     NavbarComponent,
+    CursorFollowerComponent,
+    FloatingElementsComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
