@@ -1,19 +1,21 @@
-
-
 <nav
-    class="capitalize fixed w-full z-20 top-0 start-0 border-b bg-white/0 dark:bg-bg-mid-dark/0 background-blur-lg backdrop-blur-md border-gray-200 dark:border-gray-600 px-5 md:px-25">
+    class="capitalize fixed w-full z-20 top-0 start-0 border-b bg-white/80 dark:bg-bg-mid-dark/80 backdrop-blur-md border-gray-200 dark:border-gray-600 px-4 sm:px-6 lg:px-10">
     <div
-        class="max-w-screen-xl flex flex-wrap items-center justify-between md:mx-auto mx-0 py-4">
+        class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-3">
+
+        <!-- Logo -->
         <a routerLink="/"
-            class="flex items-center space-x-3 rtl:space-x-reverse">
+            class="flex items-center shrink-0">
             <span
-                class="self-center md:text-2xl text-xl typography text-md font-light whitespace-nowrap dark:text-white text-black">Mohammed</span>
+                class="text-xl sm:text-2xl typography font-light whitespace-nowrap dark:text-white text-black">Mohammed</span>
         </a>
-        <div class="flex md:order-2 space-x-2 md:space-x-0 rtl:space-x-reverse">
+
+        <!-- Right side: theme toggle + hamburger -->
+        <div class="flex items-center gap-3 lg:order-1">
 
             <!-- Theme Toggle Button -->
             <button (click)="toggleTheme()"
-                class="my-2 text-xl rounded cursor-pointer">
+                class="text-xl rounded cursor-pointer p-1">
                 @if (isDarkModeEnabled()) {
                 <i
                     class="fas fa-moon text-white hover:text-hover transition-colors"></i>
@@ -23,11 +25,16 @@
                 }
             </button>
 
-            <!-- Mobile Menu Button -->
+            <!-- Mobile Menu Button (visible below lg) -->
             <button (click)="toggleNavbar()"
-                class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
-                aria-controls="navbar-sticky" aria-expanded="false">
+                class="inline-flex items-center justify-center p-2 w-10 h-10 text-sm rounded-lg lg:hidden border border-gray-300 dark:border-gray-500 text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none cursor-pointer"
+                aria-controls="navbar-sticky" [attr.aria-expanded]="isNavbarOpen">
                 <span class="sr-only">Open main menu</span>
+                @if (isNavbarOpen) {
+                <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1l12 12M13 1L1 13" />
+                </svg>
+                } @else {
                 <svg class="w-5 h-5" aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 17 14">
@@ -35,56 +42,56 @@
                         stroke-linejoin="round" stroke-width="2"
                         d="M1 1h15M1 7h15M1 13h15" />
                 </svg>
+                }
             </button>
         </div>
 
-        <!-- Navbar Menu -->
+        <!-- Navbar Menu (full-width below header on mobile, inline on desktop) -->
         <div [class.hidden]="!isNavbarOpen"
-            class="items-center justify-between w-full md:flex md:w-auto md:order-1"
+            class="w-full lg:flex lg:items-center lg:w-auto "
             id="navbar-sticky">
             <ul
-                class="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 dark:border-gray">
+                class="flex flex-col gap-2 py-4 px-2 mt-3 font-medium border border-gray-200 dark:border-gray-700 rounded-lg lg:flex-row lg:items-center lg:gap-1 xl:gap-4 lg:p-0 lg:mt-0 lg:border-0">
                 <li>
                     <a (click)="closeNavbar()" routerLink="/home"
-                        routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        routerLinkActive="!bg-gray !text-white"
+                        class="block py-2 px-4 lg:py-1 lg:px-3 text-sm text-black dark:text-white rounded-lg hover:bg-gray transition-colors"
                         aria-current="page">Home</a>
                 </li>
                 <li>
                     <a (click)="closeNavbar()" routerLink="/about"
-                        routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white rounded-xl md:mt-0 mt-2 md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        routerLinkActive="!bg-gray !text-white"
+                        class="block py-2 px-4 lg:py-1 lg:px-3 text-sm text-black dark:text-white rounded-lg hover:bg-gray transition-colors"
                         aria-current="page">About</a>
                 </li>
-
                 <li>
                     <a (click)="closeNavbar()" routerLink="/experience"
-                        routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        routerLinkActive="!bg-gray !text-white"
+                        class="block py-2 px-4 lg:py-1 lg:px-3 text-sm text-black dark:text-white rounded-lg hover:bg-gray transition-colors"
                         aria-current="page">Experience</a>
                 </li>
                 <li>
                     <a (click)="closeNavbar()" routerLink="/projects"
-                        routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        routerLinkActive="!bg-gray !text-white"
+                        class="block py-2 px-4 lg:py-1 lg:px-3 text-sm text-black dark:text-white rounded-lg hover:bg-gray transition-colors"
                         aria-current="page">Projects</a>
                 </li>
                 <li>
                     <a (click)="closeNavbar()" routerLink="/services"
-                        routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        routerLinkActive="!bg-gray !text-white"
+                        class="block py-2 px-4 lg:py-1 lg:px-3 text-sm text-black dark:text-white rounded-lg hover:bg-gray transition-colors"
                         aria-current="page">Services</a>
                 </li>
                 <li>
                     <a (click)="closeNavbar()" routerLink="/skills"
-                        routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        routerLinkActive="!bg-gray !text-white"
+                        class="block py-2 px-4 lg:py-1 lg:px-3 text-sm text-black dark:text-white rounded-lg hover:bg-gray transition-colors"
                         aria-current="page">Skills</a>
                 </li>
                 <li>
                     <a (click)="closeNavbar()" routerLink="/contact"
-                        routerLinkActive="!bg-gray transition-all !text-white"
-                        class="block py-1 px-3 text-black dark:text-white md:mt-0 mt-2 rounded-xl md:bg-transparent font-medium hover:bg-gray transition-colors"
+                        routerLinkActive="!bg-gray !text-white"
+                        class="block py-2 px-4 lg:py-1 lg:px-3 text-sm text-black dark:text-white rounded-lg hover:bg-gray transition-colors"
                         aria-current="page">Contact</a>
                 </li>
             </ul>
