@@ -9,6 +9,54 @@ export interface Skill {
 export const SKILLS: Skill[] = [
   // Frontend Technologies
   {
+    name: 'Next.js',
+    file: 'nextjs.svg',
+    category: 'Frontend',
+    level: 'Expert',
+    description:
+      'Next.js 14/15/16 App Router, SSR, SSG, Server Actions, API routes, and full-stack performance',
+  },
+  {
+    name: 'React',
+    file: 'react.svg',
+    category: 'Frontend',
+    level: 'Expert',
+    description:
+      'React 18/19, Hooks, state management, component architecture, and modern ecosystems',
+  },
+  {
+    name: '.NET Core',
+    file: 'dotnet.svg',
+    category: 'Backend',
+    level: 'Advanced',
+    description:
+      'ASP.NET Core, Web APIs, middleware, dependency injection, and cross-platform development',
+  },
+  {
+    name: 'Angular',
+    file: 'angular-svgrepo-com.svg',
+    category: 'Frontend',
+    level: 'Expert',
+    description:
+      'Angular 18+, RxJS, state management, routing, and component architecture',
+  },
+  {
+    name: 'TypeScript',
+    file: 'typescript-16-svgrepo-com.svg',
+    category: 'Frontend',
+    level: 'Expert',
+    description:
+      'Strong typing, interfaces, generics, and type-safe development',
+  },
+  {
+    name: 'JavaScript',
+    file: 'Javascript.svg',
+    category: 'Frontend',
+    level: 'Advanced',
+    description:
+      'ES6+, async/await, DOM manipulation, and modern JavaScript features',
+  },
+  {
     name: 'HTML',
     file: 'html.svg',
     category: 'Frontend',
@@ -25,28 +73,12 @@ export const SKILLS: Skill[] = [
       'CSS3, Flexbox, Grid, animations, and responsive design principles',
   },
   {
-    name: 'JavaScript',
-    file: 'Javascript.svg',
-    category: 'Frontend',
-    level: 'Advanced',
-    description:
-      'ES6+, async/await, DOM manipulation, and modern JavaScript features',
-  },
-  {
-    name: 'TypeScript',
-    file: 'typescript-16-svgrepo-com.svg',
+    name: 'TailwindCSS',
+    file: 'tailwind.svg',
     category: 'Frontend',
     level: 'Expert',
     description:
-      'Strong typing, interfaces, generics, and type-safe development',
-  },
-  {
-    name: 'Angular',
-    file: 'angular-svgrepo-com.svg',
-    category: 'Frontend',
-    level: 'Expert',
-    description:
-      'Angular 18+, RxJS, state management, routing, and component architecture',
+      'Utility-first CSS, custom configurations, Tailwind v4, and rapid UI development',
   },
   {
     name: 'Bootstrap',
@@ -54,14 +86,6 @@ export const SKILLS: Skill[] = [
     category: 'Frontend',
     level: 'Advanced',
     description: 'Responsive layouts, components, utilities, and customization',
-  },
-  {
-    name: 'TailwindCSS',
-    file: 'tailwind.svg',
-    category: 'Frontend',
-    level: 'Advanced',
-    description:
-      'Utility-first CSS, custom configurations, and rapid UI development',
   },
   {
     name: 'MaterialUI',
@@ -87,6 +111,14 @@ export const SKILLS: Skill[] = [
 
   // Backend Technologies
   {
+    name: 'Node.js',
+    file: 'nodejs.svg',
+    category: 'Backend',
+    level: 'Advanced',
+    description:
+      'Server-side JavaScript, Express, RESTful APIs, middleware, and async architecture',
+  },
+  {
     name: 'C#',
     file: 'csharp.svg',
     category: 'Backend',
@@ -94,14 +126,7 @@ export const SKILLS: Skill[] = [
     description:
       'Object-oriented programming, LINQ, async programming, and design patterns',
   },
-  {
-    name: '.NET Core',
-    file: 'dotnet.svg',
-    category: 'Backend',
-    level: 'Advanced',
-    description:
-      'ASP.NET Core, Web APIs, middleware, dependency injection, and cross-platform development',
-  },
+  
   {
     name: 'Entity Framework',
     file: 'ef-core.svg',
@@ -119,14 +144,6 @@ export const SKILLS: Skill[] = [
       'MVC pattern, Razor views, model binding, and server-side rendering',
   },
   {
-    name: 'SQL Server',
-    file: 'sql-svgrepo-com.svg',
-    category: 'Backend',
-    level: 'Advanced',
-    description:
-      'Database design, T-SQL, stored procedures, and query optimization',
-  },
-  {
     name: 'RESTful APIs',
     file: 'api.svg',
     category: 'Backend',
@@ -135,6 +152,22 @@ export const SKILLS: Skill[] = [
   },
 
   // Database & Tools
+  {
+    name: 'PostgreSQL',
+    file: 'PostgresSQL.svg',
+    category: 'Database',
+    level: 'Advanced',
+    description:
+      'Relational database design, queries, Prisma ORM, indexing, and performance',
+  },
+  {
+    name: 'SQL Server',
+    file: 'sql-svgrepo-com.svg',
+    category: 'Database',
+    level: 'Advanced',
+    description:
+      'Database design, T-SQL, stored procedures, and query optimization',
+  },
   {
     name: 'SQL',
     file: 'sql-svgrepo-com.svg',

@@ -85,18 +85,24 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
 
-.tech-badge.angular {
-    top: 10%;
+.tech-badge.nextjs {
+    top: 5%;
     right: -10%;
-    color: #dd0031;
     animation-delay: 0s;
 }
 
-.tech-badge.dotnet {
-    bottom: 20%;
+.tech-badge.angular {
+    bottom: 10%;
     right: -5%;
-    color: #512bd4;
+    color: #dd0031;
     animation-delay: 1s;
+}
+
+.tech-badge.dotnet {
+    top: 50%;
+    left: -10%;
+    color: #512bd4;
+    animation-delay: 2s;
 }
 
 .tech-badge.code {

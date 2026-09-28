@@ -29,19 +29,21 @@ export class HomeComponent implements AfterViewInit {
         typeColor: '#808080',
       });
       writer
+        .type('Full-Stack Developer')
+        .rest(1200)
+        .changeOps({ deleteSpeed: 20 })
+        .remove(20)
+        .type('Next.js & React Developer')
+        .rest(1200)
+        .remove(25)
+        .type('Node.js & Backend Developer')
+        .rest(1200)
+        .remove(26)
+        .type('Angular & .NET Developer')
+        .rest(1200)
+        .remove(24)
         .type('Software Engineer')
-        .rest(1000)
-        .changeOps({ deleteSpeed: 20 })
-        .remove(17)
-        .type('Frontend Developer (Angular)')
-        .rest(1000)
-        .remove(30)
-        .type('Backend Developer (.NET Core)')
-        .rest(1000)
-        .changeOps({ deleteSpeed: 20 })
-        .remove(31)
-        .type('Full Stack Developer')
-        .rest(1000)
+        .rest(1200)
         .clear()
         .start();
 

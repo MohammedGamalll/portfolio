@@ -39,6 +39,36 @@ export class ExperienceComponent implements OnInit {
   experiences: Experience[] = [
     {
       id: 1,
+      type: 'Job',
+      title: 'Full-Stack Developer',
+      position: 'Full-Stack Developer',
+      institution: 'Pixel01',
+      location: 'Cairo, Egypt',
+      startDate: 'May 2026',
+      endDate: 'Present',
+      description:
+        'Engineering high-performance full-stack web platforms, client portals, and custom CMS solutions using Next.js (App Router), React, Node.js, PostgreSQL, and Angular. Building scalable, bilingual interfaces (RTL/LTR), fluid animations with GSAP & Framer Motion, and robust server-side APIs.',
+      skills: [
+        'Next.js',
+        'React',
+        'Node.js',
+        'PostgreSQL',
+        'TypeScript',
+        'Tailwind CSS',
+        'Angular',
+        'Prisma',
+        'RESTful APIs',
+      ],
+      achievements: [
+        'Developed and deployed production bilingual web platforms (Next.js & React)',
+        'Built custom Admin CMS dashboards empowering clients to manage dynamic content seamlessly',
+        'Optimized frontend performance, asset caching, and SEO core web vitals',
+        'Integrated secure authentication, role management, and payment/booking workflows',
+      ],
+      icon: 'fas fa-briefcase',
+    },
+    {
+      id: 2,
       type: 'Course',
       title: 'Front-End Web Development Professional Diploma',
       position: 'Student',
@@ -68,7 +98,7 @@ export class ExperienceComponent implements OnInit {
       icon: 'fas fa-graduation-cap',
     },
     {
-      id: 2,
+      id: 3,
       type: 'Internship',
       title: 'CIB Summer Technology Internship',
       position: 'Technology Intern',
@@ -94,7 +124,7 @@ export class ExperienceComponent implements OnInit {
       icon: 'fas fa-code',
     },
     {
-      id: 3,
+      id: 4,
       type: 'Job',
       title: 'AI Trainer & Code Reviewer',
       position: 'Remote AI Trainer',
@@ -120,7 +150,7 @@ export class ExperienceComponent implements OnInit {
       icon: 'fas fa-robot',
     },
     {
-      id: 4,
+      id: 5,
       type: 'Course',
       title: 'Back-End Web Development Professional Diploma',
       position: 'Student',
@@ -149,7 +179,7 @@ export class ExperienceComponent implements OnInit {
       icon: 'fas fa-server',
     },
     {
-      id: 5,
+      id: 6,
       type: 'Internship',
       title: 'Front-End Development Internship (Angular)',
       position: 'Angular Developer Intern',
